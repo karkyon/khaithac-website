@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="カイタックジャパンへのお問い合わせ - ITソリューション、システム開発のご相談はこちら" />
+    <title>お問い合わせ | カイタックジャパン</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="assets/css/" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="navbar">
+        <div class="content">
+          <div class="column"><div class="company-logo"></div></div>
+          <div class="column-1"></div>
+          <div class="column-2">
+            <div class="column-3">
+              <a href="index.html"><span class="link-text">Home</span></a>
+              <a href="index.html#services"><span class="link-text-4">サービス紹介</span></a>
+              <span class="link-text-5" style="color: #10B981; font-weight: 600;">お問い合わせ</span>
+              <div class="link">
+                <div class="nav-link-dropdown">
+                  <a href="campany.html"><span class="link-text-6">会社情報</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header">
+        <div class="column-7">
+          <div class="content-8">
+            <span class="hero-headline"
+              >あなたのビジネスの課題、私たちが解決します。<br />まずはご相談を!</span
+            ><span class="lorem-ipsum"
+              >私たちはお客様のニーズに応じたサポートを提供します。どんな質問でもお気軽にご相談ください。</span
+            >
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-info">
+        <div class="container">
+          <div class="content-9">
+            <div class="section-title">
+              <div class="tagline-wrapper">
+                <span class="tagline">お問い合わせ</span>
+              </div>
+              <div class="content-a">
+                <span class="heading">ご連絡はこちら</span
+                ><span class="text"
+                  >ご質問、お見積り依頼など、どんなことでもお気軽にお問い合わせください。<br />折り返し、担当者よりご連絡を差し上げます。</span
+                >
+              </div>
+            </div>
+            <div class="content-b">
+              <div class="row">
+                <div class="icon-envelope"></div>
+                <span class="text-info">info@khaithac-jp.com</span>
+              </div>
+              <div class="row-c">
+                <div class="icon-phone"></div>
+                <span class="text-phone">072-300-2410</span>
+              </div>
+              <div class="row-d">
+                <div class="icon-map"></div>
+                <span class="text-address"
+                  >〒573-0136<br />大阪府枚方市春日西町2丁目28番26号</span
+                >
+              </div>
+            </div>
+          </div>
+          
+          <!-- フォーム -->
+          <form id="contact-form" class="form">
+            <div class="inputs">
+              <div class="input">
+                <span class="first-name">お名前（姓）<span style="color: #ef4444;">*</span></span>
+                <input type="text" name="lastName" class="text-input" placeholder="山田" required />
+              </div>
+              <div class="input-e">
+                <span class="last-name">お名前（名）<span style="color: #ef4444;">*</span></span>
+                <input type="text" name="firstName" class="text-input-f" placeholder="太郎" required />
+              </div>
+            </div>
+            
+            <div class="inputs-10">
+              <div class="input-11">
+                <span class="email">メールアドレス<span style="color: #ef4444;">*</span></span>
+                <input type="email" name="email" class="text-input-12" placeholder="example@company.co.jp" required />
+              </div>
+              <div class="input-13">
+                <span class="phone-number">電話番号</span>
+                <input type="tel" name="phone" class="text-input-14" placeholder="090-1234-5678" />
+              </div>
+            </div>
+            
+            <div class="input-15">
+              <span class="choose-topic">お問い合わせ種別<span style="color: #ef4444;">*</span></span>
+              <select name="topic" class="select" required style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #e5e7eb; font-size: 14px;">
+                <option value="">選択してください</option>
+                <option value="見積もり依頼">見積もり依頼</option>
+                <option value="サービスについて">サービスについて</option>
+                <option value="技術相談">技術相談</option>
+                <option value="パートナーシップ">パートナーシップ</option>
+                <option value="採用について">採用について</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            
+            <div class="radios">
+              <span class="best-describes-you">ご興味のあるサービス（複数選択可）</span>
+              <div class="content-16">
+                <div class="row-17">
+                  <div class="radio">
+                    <input type="checkbox" name="service[]" value="ACCESS改修" id="service1" />
+                    <label for="service1"><span class="first-choice">ACCESS改修・移行</span></label>
+                  </div>
+                  <div class="radio-19">
+                    <input type="checkbox" name="service[]" value="TALON導入" id="service2" />
+                    <label for="service2"><span class="second-choice">TALON導入</span></label>
+                  </div>
+                </div>
+                <div class="row-1b">
+                  <div class="radio-1c">
+                    <input type="checkbox" name="service[]" value="スクラッチ開発" id="service3" />
+                    <label for="service3"><span class="third-choice">スクラッチ開発</span></label>
+                  </div>
+                  <div class="radio-1e">
+                    <input type="checkbox" name="service[]" value="システム保守" id="service4" />
+                    <label for="service4"><span class="fourth-choice">システム保守</span></label>
+                  </div>
+                </div>
+                <div class="row-20">
+                  <div class="radio-21">
+                    <input type="checkbox" name="service[]" value="コンサルティング" id="service5" />
+                    <label for="service5"><span class="fifth-choice">コンサルティング</span></label>
+                  </div>
+                  <div class="radio-23">
+                    <input type="checkbox" name="service[]" value="その他" id="service6" />
+                    <label for="service6"><span class="other">その他</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="input-25">
+              <span class="message">お問い合わせ内容<span style="color: #ef4444;">*</span></span>
+              <textarea name="message" class="text-area" placeholder="お問い合わせ内容をご記入ください" rows="6" required style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #e5e7eb; font-size: 14px; resize: vertical; font-family: inherit;" minlength="10"></textarea>
+            </div>
+            
+            <div class="checkbox">
+              <input type="checkbox" id="terms" name="terms" required class="checkbox-27" />
+              <div class="label">
+                <label for="terms">
+                  <span class="accept-terms">
+                    <a href="privacy-policy.html" target="_blank" style="color: #10B981; text-decoration: underline;">プライバシーポリシー</a>に同意する
+                    <span style="color: #ef4444;">*</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            
+            <button type="submit" class="button" style="width: 100%; padding: 14px; background: #10B981; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+              <span class="submit">送信する</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- フッター -->
+      <div class="footer">
+        <div class="content-28">
+          <div class="column-29">
+            <div class="logo-wide"></div>
+            <div class="content-2a">
+              <div class="content-2b">
+                <span class="address">住所:</span
+                ><span class="address-details"
+                  >〒573-0136<br />大阪府枚方市春日西町2丁目28番26号</span
+                >
+              </div>
+              <div class="content-2c">
+                <span class="contact">連絡先:</span>
+                <div class="container-2d">
+                  <span class="phone-number-2e">072-300-2410</span
+                  ><span class="email-2f">info@khaithac-jp.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column-30">
+            <div class="link-list">
+              <div class="link-31">
+                <a href="index.html#services"><span class="service-introduction">サービス紹介</span></a>
+              </div>
+              <div class="link-32">
+                <a href="campany.html"><span class="company-info">会社案内</span></a>
+              </div>
+              <div class="link-33">
+                <a href="contact.html"><span class="contact-34">お問い合わせ</span></a>
+              </div>
+              <div class="link-35">
+                <span class="support-info">サポート情報</span>
+              </div>
+              <div class="link-36">
+                <a href="privacy-policy.html"><span class="privacy-policy">プライバシーポリシー</span></a>
+              </div>
+            </div>
+            <div class="link-list-37">
+              <div class="link-38">
+                <span class="terms-of-use">利用規約</span>
+              </div>
+              <div class="link-39">
+                <span class="cookie-settings">クッキー設定</span>
+              </div>
+              <div class="link-3a">
+                <span class="announcement">お知らせ</span>
+              </div>
+              <div class="link-3b">
+                <span class="latest-info">最新情報</span>
+              </div>
+              <div class="link-3c"><span class="faq">FAQ</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="credits">
+          <div class="divider"></div>
+          <div class="row-3d">
+            <span class="copyright"
+              >© 2025 Khaithac-JP. All rights reserved.</span
+            >
+            <div class="footer-links">
+              <a href="privacy-policy.html"><span class="privacy-policy-3e">プライバシーポリシー</span></a>
+              <span class="terms-of-service">サービス利用規約</span>
+              <span class="cookie-settings-3f">クッキー設定</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 設定ファイルとJavaScript -->
+    <script src="config.js"></script>
+    <script src="contact.js"></script>
+  </body>
+</html>
