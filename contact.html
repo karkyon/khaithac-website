@@ -50,6 +50,14 @@
       scroll-behavior: smooth;
     }
 
+    /* HEROセクション背景画像スタイル */
+    .hero-background {
+      background-image: linear-gradient(rgba(0, 160, 233, 0.4), rgba(0, 160, 233, 0.2)), url('assets/images/hero/contact_hero_bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
     /* フォームアニメーション */
     .form-field {
       opacity: 0;
@@ -99,13 +107,13 @@
   <div id="header-placeholder"></div>
 
   <!-- ヒーローセクション -->
-  <section class="relative bg-gradient-to-br from-accent/10 via-white to-primary/10 py-20">
+  <section class="relative hero-background py-20 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up drop-shadow-lg">
           お問い合わせ
         </h1>
-        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md">
           あなたのビジネスの課題、私たちが解決します。<br>
           まずはご相談を！
         </p>
