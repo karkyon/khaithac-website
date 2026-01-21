@@ -14,8 +14,7 @@
 const SITE_CONFIG = {
   // Google Maps API設定
   googleMaps: {
-    // ★★★ APIキーをここに設定してください ★★★
-    // 本番環境では環境変数から取得することを推奨
+    // Google Maps APIキー
     apiKey: 'AIzaSyC1LrD7xMN_sLZ5iELaLpPzXPeQeEoH6pY',
     
     // 会社の位置情報（大阪府枚方市春日西町2丁目28番26号）
@@ -43,7 +42,7 @@ const SITE_CONFIG = {
     nameEn: 'Khaithac Japan LLC',
     address: '〒573-0136 大阪府枚方市春日西町2丁目28番26号',
     tel: '072-300-2410',
-    email: 'info@khaithac-jp.com',
+    email: 'contact@khaithac-jp.com',
     established: '2017年1月',
     capital: '100万円',
     representative: '井本 豊',
@@ -54,16 +53,16 @@ const SITE_CONFIG = {
   // EmailJSを使用する場合は https://www.emailjs.com/ でアカウント作成
   // 200 monthly requestsまで無料
   emailJS: {
-    enabled: false,              // EmailJS使用の有効/無効
-    serviceId: 'YOUR_SERVICE_ID',
-    templateId: 'YOUR_TEMPLATE_ID',
+    enabled: true,
+   serviceId: 'service_8tpjf49',
+    templateId: 'template_28nfoi7',
     publicKey: 'tBov2aYtF3uYwLd03'
   },
 
   // お問い合わせフォーム設定
   contactForm: {
     // フォーム送信先メールアドレス
-    recipientEmail: 'info@khaithac-jp.com',
+    recipientEmail: 'contact@khaithac-jp.com',
     
     // 自動返信メール設定
     autoReply: {
@@ -82,7 +81,7 @@ const SITE_CONFIG = {
         合同会社カイタックジャパン
         〒573-0136 大阪府枚方市春日西町2丁目28番26号
         TEL: 072-300-2410
-        Email: info@khaithac-jp.com
+        Email: contact@khaithac-jp.com
         営業時間: 平日 9:00〜18:00
         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       `

@@ -311,8 +311,13 @@ class ContactForm {
       // 例: fetch APIを使用してバックエンドに送信
       // const response = await this.sendFormData(formData);
 
-      // デモ用: 2秒待機
-      await this.simulateSubmit(formData);
+      // EmailJSで送信
+      if (SITE_CONFIG.emailJS.enabled) {
+        await this.sendViaEmailJS(formData);
+      } else {
+        // デモ用: 2秒待機
+        await this.simulateSubmit(formData);
+      }
 
       // 成功メッセージを表示
       this.showSuccessModal();
@@ -354,8 +359,61 @@ class ContactForm {
     return data;
   }
 
+/**
+   * EmailJSを使用してフォームを送信
+   */
+  async sendViaEmailJS(formData) {
+    // EmailJS設定の確認
+    if (!SITE_CONFIG.emailJS.enabled) {
+      throw new Error('EmailJS is not enabled in config.js');
+    }
+
+    const { publicKey, serviceId, templateId } = SITE_CONFIG.emailJS;
+
+    // EmailJSの初期化
+    emailjs.init(publicKey);
+
+    // サービス選択を文字列に変換
+    const services = formData.services ? formData.services.join(', ') : 'なし';
+
+    // EmailJSに送信するテンプレートパラメータ
+    const templateParams = {
+      name: `${formData.lastName || ''} ${formData.firstName || ''}`.trim(),
+      lastName: formData.lastName || '',
+      firstName: formData.firstName || '',
+      email: formData.email || '',
+      phone: formData.phone || '未入力',
+      topic: formData.topic || '',
+      service: services,
+      message: formData.message || '',
+      send_date: new Date().toLocaleString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      })
+    };
+
+    console.log('📧 Sending email via EmailJS...', templateParams);
+
+    try {
+      // EmailJSでメール送信
+      const response = await emailjs.send(serviceId, templateId, templateParams);
+      
+      console.log('✅ Email sent successfully!', response);
+      return response;
+      
+    } catch (error) {
+      console.error('❌ EmailJS error:', error);
+      throw new Error('メール送信に失敗しました: ' + error.text);
+    }
+  }
+
   /**
    * 送信シミュレーション（デモ用）
+   * ※EmailJS有効時は使用されません
    */
   simulateSubmit(formData) {
     return new Promise((resolve) => {
