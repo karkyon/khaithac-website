@@ -45,6 +45,13 @@
   
   <style>
     html { scroll-behavior: smooth; }
+    /* HEROセクション背景画像スタイル */
+    .hero-background {
+      background-image: linear-gradient(rgba(0, 160, 233, 0.4), rgba(82, 143, 171, 0.2)), url('../assets/images/hero/mobileapp_hero_bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   </style>
 </head>
 <body class="font-roboto text-gray-800 bg-gray-50">
@@ -53,17 +60,17 @@
   <div id="header-placeholder"></div>
 
   <!-- ヒーローセクション -->
-  <section class="relative bg-gradient-to-br from-primary/10 via-white to-accent/5 py-20">
+  <section class="relative hero-background py-20 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-block px-6 py-2 bg-primary/10 rounded-full mb-6">
-          <span class="text-primary font-bold text-lg">Web・モバイルアプリ開発</span>
+      <div class="text-left max-w-4xl mx-auto">
+        <div class="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+          <span class="text-white font-bold text-lg">Web・モバイルアプリ開発</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
           ビジネスを加速する<br>
           高品質なアプリケーション開発
         </h1>
-        <p class="text-xl text-gray-600 leading-relaxed">
+        <p class="text-xl text-white leading-relaxed drop-shadow-md">
           中小企業向けに、低コスト・短期間で<br>
           Webアプリやモバイルアプリを提供します。<br>
           自社開発のSaaS製品もご活用ください。
