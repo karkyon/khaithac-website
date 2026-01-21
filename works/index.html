@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="カイタックジャパンの開発実績 - 製造業、サービス業、建設業など多様な業界での開発事例をご紹介">
+  <meta name="keywords" content="開発実績,事例,ポートフォリオ,システム開発,導入事例,カイタックジャパン">
+  <title>開発実績 | カイタックジャパン</title>
+  
+  <!-- ファビコン - 複数サイズ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- コンポーネントローダー -->
+  <script src="../assets/js/components-loader.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'roboto': ['Roboto', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#00A0E9',
+            'secondary': '#0088CC',
+            'accent': '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-roboto text-gray-800 bg-gray-50">
+
+  <!-- ナビゲーション -->
+  <div id="header-placeholder"></div>
+
+  <!-- ヒーローセクション -->
+  <section class="relative bg-gradient-to-br from-primary to-secondary py-20 md:py-32">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptLTIwIDIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] bg-repeat"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-left mb-12">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Case study</h1>
+        <p class="text-3xl md:text-5xl font-bold text-white">お客様事例</p>
+      </div>
+      
+      <div class="max-w-4xl text-left">
+        <p class="text-xl md:text-2xl text-white/95 leading-relaxed">
+          多様な業界・業種でのシステム開発実績をご紹介します。<br>
+          お客様の課題を解決し、業務効率を大幅に向上させた事例の数々。<br>
+          実際の導入効果と、その後の運用状況についてもご覧いただけます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 実績統計 -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-primary mb-2">50+</div>
+          <p class="text-gray-600 font-semibold">プロジェクト実績</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-accent mb-2">15+</div>
+          <p class="text-gray-600 font-semibold">業種・業界</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-purple-600 mb-2">95%</div>
+          <p class="text-gray-600 font-semibold">顧客満足度</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-bold text-orange-500 mb-2">7年</div>
+          <p class="text-gray-600 font-semibold">平均継続年数</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事例一覧 -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- フィルターバー -->
+      <div class="mb-12 flex flex-wrap gap-3 justify-center">
+        <button class="px-6 py-2 bg-primary text-white font-semibold rounded-full hover:bg-secondary transition-all">
+          すべて
+        </button>
+        <button class="px-6 py-2 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition-all">
+          製造業
+        </button>
+        <button class="px-6 py-2 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition-all">
+          サービス業
+        </button>
+        <button class="px-6 py-2 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition-all">
+          建設業
+        </button>
+        <button class="px-6 py-2 bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition-all">
+          物流業
+        </button>
+      </div>
+
+      <!-- 事例カードグリッド -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 事例1 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full">製造業</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">スクラッチ開発</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">生産管理システムの全面刷新</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              老朽化したAccessシステムを最新のWebシステムに移行。リアルタイム在庫管理と生産計画の自動化により、業務効率30%向上を実現。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">導入効果:</span> 効率30%向上
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例2 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-600 text-sm font-semibold rounded-full">物流業</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">TALON開発</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">配車管理システムのローコード開発</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              TALONを活用し、わずか2ヶ月で配車管理システムを構築。GPSと連携したリアルタイム追跡機能で、配送効率が25%向上。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">開発期間:</span> 2ヶ月
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例3 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full">サービス業</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">ACCESS改修</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">顧客管理システムのクラウド移行</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              オンプレミスのAccessシステムをクラウドへ移行。どこからでもアクセス可能になり、リモートワークに対応。セキュリティも大幅強化。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">導入効果:</span> 利便性向上
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例4 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-amber-100 text-amber-600 text-sm font-semibold rounded-full">建設業</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">モバイルアプリ</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">現場管理モバイルアプリ開発</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              タブレット対応の現場管理アプリを開発。写真撮影、図面閲覧、進捗報告がその場で完結。ペーパーレス化により、事務作業40%削減。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">導入効果:</span> 事務作業40%削減
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例5 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-semibold rounded-full">小売業</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">ECサイト構築</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">オンラインショップ構築と在庫連携</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              既存の店舗POSシステムと連携したECサイトを構築。リアルタイム在庫同期により、機会損失を大幅に削減。売上20%増を達成。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">導入効果:</span> 売上20%増
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例6 -->
+        <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+          <div class="aspect-video bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <svg class="w-24 h-24 text-white/30 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-600 text-sm font-semibold rounded-full">医療・福祉</span>
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full">スクラッチ開発</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">電子カルテシステムの独自開発</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+              クリニック特有の診療フローに完全対応した電子カルテを開発。タブレット対応で診察室での入力が効率化。患者満足度も向上。
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                <span class="font-semibold">開発期間:</span> 6ヶ月
+              </div>
+              <a href="#" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors">
+                詳細
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- もっと見るボタン -->
+      <div class="text-center mt-12">
+        <button class="px-10 py-4 bg-white text-primary border-2 border-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-xl">
+          さらに事例を見る
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          お客様の声
+        </h2>
+        <p class="text-lg text-gray-600">
+          実際にご利用いただいたお客様からのお声をご紹介します
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 声1 -->
+        <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border-2 border-blue-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+              A
+            </div>
+            <div>
+              <p class="font-bold text-gray-900">製造業 A社様</p>
+              <p class="text-sm text-gray-600">代表取締役</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed italic">
+            「長年使ってきたAccessシステムの限界を感じていましたが、カイタックジャパンさんに相談して正解でした。現場の声を丁寧に聞いてくれて、本当に使いやすいシステムになりました。」
+          </p>
+        </div>
+
+        <!-- 声2 -->
+        <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl shadow-lg border-2 border-emerald-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+              B
+            </div>
+            <div>
+              <p class="font-bold text-gray-900">物流業 B社様</p>
+              <p class="text-sm text-gray-600">システム管理者</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed italic">
+            「TALONでの開発により、想像以上に短期間でシステムが完成しました。運用開始後のサポートも手厚く、安心して使い続けられています。」
+          </p>
+        </div>
+
+        <!-- 声3 -->
+        <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg border-2 border-purple-100">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+              C
+            </div>
+            <div>
+              <p class="font-bold text-gray-900">サービス業 C社様</p>
+              <p class="text-sm text-gray-600">営業部長</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed italic">
+            「クラウド移行により、リモートワークが可能になりました。セキュリティ面でも安心でき、業務の柔軟性が大幅に向上しました。」
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        あなたの課題も解決できるかもしれません
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+        これらの事例はほんの一部です。<br>
+        お客様の業界・業種に合わせた最適なソリューションをご提案いたします。<br>
+        まずはお気軽にご相談ください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="../contact.html" class="inline-block px-10 py-5 bg-white text-primary font-bold rounded-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg">
+          お問い合わせ
+        </a>
+        <a href="../services/index.html" class="inline-block px-10 py-5 bg-accent text-white font-bold rounded-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg">
+          サービス一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

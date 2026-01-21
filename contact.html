@@ -1,250 +1,338 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="カイタックジャパンへのお問い合わせ - ITソリューション、システム開発のご相談はこちら" />
-    <title>お問い合わせ | カイタックジャパン</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" />
-    <link rel="stylesheet" href="assets/css/" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-  </head>
-  <body>
-    <div class="main-container">
-      <div class="navbar">
-        <div class="content">
-          <div class="column"><div class="company-logo"></div></div>
-          <div class="column-1"></div>
-          <div class="column-2">
-            <div class="column-3">
-              <a href="index.html"><span class="link-text">Home</span></a>
-              <a href="index.html#services"><span class="link-text-4">サービス紹介</span></a>
-              <span class="link-text-5" style="color: #10B981; font-weight: 600;">お問い合わせ</span>
-              <div class="link">
-                <div class="nav-link-dropdown">
-                  <a href="campany.html"><span class="link-text-6">会社情報</span></a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="カイタックジャパンへのお問い合わせ - ITソリューション、システム開発のご相談はこちら">
+  <meta name="keywords" content="カイタックジャパン,お問い合わせ,相談,見積もり,システム開発">
+  <title>お問い合わせ | カイタックジャパン</title>
+  
+  <!-- ファビコン - 複数サイズ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- コンポーネントローダー -->
+  <script src="/assets/js/components-loader.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'roboto': ['Roboto', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#00A0E9',
+            'secondary': '#0088CC',
+            'accent': '#10B981',
+            'orange': '#FF6B35',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* フォームアニメーション */
+    .form-field {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .form-field.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* インプットフォーカスアニメーション */
+    input:focus, textarea:focus, select:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    }
+
+    /* ボタンリップルエフェクト */
+    .btn-ripple {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-ripple:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-ripple:active:after {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body class="font-roboto text-gray-800 bg-gray-50">
+
+  <!-- ナビゲーション -->
+  <div id="header-placeholder"></div>
+
+  <!-- ヒーローセクション -->
+  <section class="relative bg-gradient-to-br from-accent/10 via-white to-primary/10 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+          お問い合わせ
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          あなたのビジネスの課題、私たちが解決します。<br>
+          まずはご相談を！
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせフォームセクション -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        
+        <!-- 左側: 連絡先情報 -->
+        <div class="lg:col-span-2">
+          <div class="sticky top-24">
+            <div class="bg-gradient-to-br from-accent to-secondary text-white p-8 rounded-2xl shadow-xl">
+              <h2 class="text-2xl font-bold mb-6">ご連絡はこちら</h2>
+              <p class="mb-8 text-white/90 leading-relaxed">
+                ご質問、お見積り依頼など、どんなことでもお気軽にお問い合わせください。<br>
+                折り返し、担当者よりご連絡を差し上げます。
+              </p>
+
+              <div class="space-y-6">
+                <!-- メール -->
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <div>
+                    <p class="font-semibold mb-1">メール</p>
+                    <a href="mailto:info@khaithac-jp.com" class="hover:underline">
+                      info@khaithac-jp.com
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 電話 -->
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                  <div>
+                    <p class="font-semibold mb-1">電話</p>
+                    <a href="tel:0723002410" class="hover:underline">
+                      072-300-2410
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 住所 -->
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <div>
+                    <p class="font-semibold mb-1">オフィス</p>
+                    <p class="text-sm leading-relaxed">
+                      〒573-0136<br>
+                      大阪府枚方市春日西町2丁目28番26号
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 営業時間 -->
+                <div class="flex items-start">
+                  <svg class="w-6 h-6 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <div>
+                    <p class="font-semibold mb-1">営業時間</p>
+                    <p class="text-sm">平日 9:00〜18:00</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="header">
-        <div class="column-7">
-          <div class="content-8">
-            <span class="hero-headline"
-              >あなたのビジネスの課題、私たちが解決します。<br />まずはご相談を!</span
-            ><span class="lorem-ipsum"
-              >私たちはお客様のニーズに応じたサポートを提供します。どんな質問でもお気軽にご相談ください。</span
-            >
-          </div>
-        </div>
-      </div>
-      
-      <div class="contact-info">
-        <div class="container">
-          <div class="content-9">
-            <div class="section-title">
-              <div class="tagline-wrapper">
-                <span class="tagline">お問い合わせ</span>
-              </div>
-              <div class="content-a">
-                <span class="heading">ご連絡はこちら</span
-                ><span class="text"
-                  >ご質問、お見積り依頼など、どんなことでもお気軽にお問い合わせください。<br />折り返し、担当者よりご連絡を差し上げます。</span
-                >
-              </div>
-            </div>
-            <div class="content-b">
-              <div class="row">
-                <div class="icon-envelope"></div>
-                <span class="text-info">info@khaithac-jp.com</span>
-              </div>
-              <div class="row-c">
-                <div class="icon-phone"></div>
-                <span class="text-phone">072-300-2410</span>
-              </div>
-              <div class="row-d">
-                <div class="icon-map"></div>
-                <span class="text-address"
-                  >〒573-0136<br />大阪府枚方市春日西町2丁目28番26号</span
-                >
-              </div>
-            </div>
-          </div>
-          
-          <!-- フォーム -->
-          <form id="contact-form" class="form">
-            <div class="inputs">
-              <div class="input">
-                <span class="first-name">お名前（姓）<span style="color: #ef4444;">*</span></span>
-                <input type="text" name="lastName" class="text-input" placeholder="山田" required />
-              </div>
-              <div class="input-e">
-                <span class="last-name">お名前（名）<span style="color: #ef4444;">*</span></span>
-                <input type="text" name="firstName" class="text-input-f" placeholder="太郎" required />
-              </div>
-            </div>
-            
-            <div class="inputs-10">
-              <div class="input-11">
-                <span class="email">メールアドレス<span style="color: #ef4444;">*</span></span>
-                <input type="email" name="email" class="text-input-12" placeholder="example@company.co.jp" required />
-              </div>
-              <div class="input-13">
-                <span class="phone-number">電話番号</span>
-                <input type="tel" name="phone" class="text-input-14" placeholder="090-1234-5678" />
-              </div>
-            </div>
-            
-            <div class="input-15">
-              <span class="choose-topic">お問い合わせ種別<span style="color: #ef4444;">*</span></span>
-              <select name="topic" class="select" required style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #e5e7eb; font-size: 14px;">
-                <option value="">選択してください</option>
-                <option value="見積もり依頼">見積もり依頼</option>
-                <option value="サービスについて">サービスについて</option>
-                <option value="技術相談">技術相談</option>
-                <option value="パートナーシップ">パートナーシップ</option>
-                <option value="採用について">採用について</option>
-                <option value="その他">その他</option>
-              </select>
-            </div>
-            
-            <div class="radios">
-              <span class="best-describes-you">ご興味のあるサービス（複数選択可）</span>
-              <div class="content-16">
-                <div class="row-17">
-                  <div class="radio">
-                    <input type="checkbox" name="service[]" value="ACCESS改修" id="service1" />
-                    <label for="service1"><span class="first-choice">ACCESS改修・移行</span></label>
-                  </div>
-                  <div class="radio-19">
-                    <input type="checkbox" name="service[]" value="TALON導入" id="service2" />
-                    <label for="service2"><span class="second-choice">TALON導入</span></label>
-                  </div>
+
+        <!-- 右側: フォーム -->
+        <div class="lg:col-span-3">
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <form id="contact-form" class="space-y-6">
+              <!-- お名前（姓・名） -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-field input">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    お名前（姓） <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" name="lastName" required
+                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300"
+                         placeholder="山田">
                 </div>
-                <div class="row-1b">
-                  <div class="radio-1c">
-                    <input type="checkbox" name="service[]" value="スクラッチ開発" id="service3" />
-                    <label for="service3"><span class="third-choice">スクラッチ開発</span></label>
-                  </div>
-                  <div class="radio-1e">
-                    <input type="checkbox" name="service[]" value="システム保守" id="service4" />
-                    <label for="service4"><span class="fourth-choice">システム保守</span></label>
-                  </div>
-                </div>
-                <div class="row-20">
-                  <div class="radio-21">
-                    <input type="checkbox" name="service[]" value="コンサルティング" id="service5" />
-                    <label for="service5"><span class="fifth-choice">コンサルティング</span></label>
-                  </div>
-                  <div class="radio-23">
-                    <input type="checkbox" name="service[]" value="その他" id="service6" />
-                    <label for="service6"><span class="other">その他</span></label>
-                  </div>
+                <div class="form-field input-e">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    お名前（名） <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" name="firstName" required
+                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300"
+                         placeholder="太郎">
                 </div>
               </div>
-            </div>
-            
-            <div class="input-25">
-              <span class="message">お問い合わせ内容<span style="color: #ef4444;">*</span></span>
-              <textarea name="message" class="text-area" placeholder="お問い合わせ内容をご記入ください" rows="6" required style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #e5e7eb; font-size: 14px; resize: vertical; font-family: inherit;" minlength="10"></textarea>
-            </div>
-            
-            <div class="checkbox">
-              <input type="checkbox" id="terms" name="terms" required class="checkbox-27" />
-              <div class="label">
-                <label for="terms">
-                  <span class="accept-terms">
-                    <a href="privacy-policy.html" target="_blank" style="color: #10B981; text-decoration: underline;">プライバシーポリシー</a>に同意する
-                    <span style="color: #ef4444;">*</span>
+
+              <!-- メールアドレス・電話番号 -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-field input-11">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    メールアドレス <span class="text-red-500">*</span>
+                  </label>
+                  <input type="email" name="email" required
+                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300"
+                         placeholder="example@company.co.jp">
+                </div>
+                <div class="form-field input-13">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    電話番号
+                  </label>
+                  <input type="tel" name="phone"
+                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300"
+                         placeholder="090-1234-5678">
+                </div>
+              </div>
+
+              <!-- お問い合わせ種別 -->
+              <div class="form-field input-15">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                  お問い合わせ種別 <span class="text-red-500">*</span>
+                </label>
+                <select name="topic" required
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300 bg-white">
+                  <option value="">選択してください</option>
+                  <option value="見積もり依頼">見積もり依頼</option>
+                  <option value="サービスについて">サービスについて</option>
+                  <option value="技術相談">技術相談</option>
+                  <option value="パートナーシップ">パートナーシップ</option>
+                  <option value="採用について">採用について</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+
+              <!-- ご興味のあるサービス -->
+              <div class="form-field radios">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">
+                  ご興味のあるサービス（複数選択可）
+                </label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="ACCESS改修" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">ACCESS改修・移行</span>
+                  </label>
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="TALON導入" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">TALON導入</span>
+                  </label>
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="スクラッチ開発" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">スクラッチ開発</span>
+                  </label>
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="システム保守" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">システム保守</span>
+                  </label>
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="コンサルティング" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">コンサルティング</span>
+                  </label>
+                  <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-accent hover:bg-accent/5 transition-all duration-300">
+                    <input type="checkbox" name="service[]" value="その他" class="w-4 h-4 text-accent border-gray-300 rounded focus:ring-accent">
+                    <span class="ml-3 text-gray-700">その他</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- お問い合わせ内容 -->
+              <div class="form-field input-25">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                  お問い合わせ内容 <span class="text-red-500">*</span>
+                </label>
+                <textarea name="message" required rows="6" minlength="10"
+                          class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-accent transition-all duration-300 resize-vertical"
+                          placeholder="お問い合わせ内容をご記入ください（10文字以上）"></textarea>
+              </div>
+
+              <!-- プライバシーポリシー同意 -->
+              <div class="form-field checkbox">
+                <label class="flex items-start cursor-pointer">
+                  <input type="checkbox" id="terms" name="terms" required class="w-5 h-5 text-accent border-gray-300 rounded focus:ring-accent mt-0.5">
+                  <span class="ml-3 text-sm text-gray-700">
+                    <a href="privacy-policy.html" target="_blank" class="text-accent font-semibold hover:underline">プライバシーポリシー</a>に同意する
+                    <span class="text-red-500">*</span>
                   </span>
                 </label>
               </div>
-            </div>
-            
-            <button type="submit" class="button" style="width: 100%; padding: 14px; background: #10B981; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-              <span class="submit">送信する</span>
-            </button>
-          </form>
-        </div>
-      </div>
-      
-      <!-- フッター -->
-      <div class="footer">
-        <div class="content-28">
-          <div class="column-29">
-            <div class="logo-wide"></div>
-            <div class="content-2a">
-              <div class="content-2b">
-                <span class="address">住所:</span
-                ><span class="address-details"
-                  >〒573-0136<br />大阪府枚方市春日西町2丁目28番26号</span
-                >
-              </div>
-              <div class="content-2c">
-                <span class="contact">連絡先:</span>
-                <div class="container-2d">
-                  <span class="phone-number-2e">072-300-2410</span
-                  ><span class="email-2f">info@khaithac-jp.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column-30">
-            <div class="link-list">
-              <div class="link-31">
-                <a href="index.html#services"><span class="service-introduction">サービス紹介</span></a>
-              </div>
-              <div class="link-32">
-                <a href="campany.html"><span class="company-info">会社案内</span></a>
-              </div>
-              <div class="link-33">
-                <a href="contact.html"><span class="contact-34">お問い合わせ</span></a>
-              </div>
-              <div class="link-35">
-                <span class="support-info">サポート情報</span>
-              </div>
-              <div class="link-36">
-                <a href="privacy-policy.html"><span class="privacy-policy">プライバシーポリシー</span></a>
-              </div>
-            </div>
-            <div class="link-list-37">
-              <div class="link-38">
-                <span class="terms-of-use">利用規約</span>
-              </div>
-              <div class="link-39">
-                <span class="cookie-settings">クッキー設定</span>
-              </div>
-              <div class="link-3a">
-                <span class="announcement">お知らせ</span>
-              </div>
-              <div class="link-3b">
-                <span class="latest-info">最新情報</span>
-              </div>
-              <div class="link-3c"><span class="faq">FAQ</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="credits">
-          <div class="divider"></div>
-          <div class="row-3d">
-            <span class="copyright"
-              >© 2025 Khaithac-JP. All rights reserved.</span
-            >
-            <div class="footer-links">
-              <a href="privacy-policy.html"><span class="privacy-policy-3e">プライバシーポリシー</span></a>
-              <span class="terms-of-service">サービス利用規約</span>
-              <span class="cookie-settings-3f">クッキー設定</span>
-            </div>
+
+              <!-- 送信ボタン -->
+              <button type="submit" 
+                      class="btn-ripple w-full py-4 bg-gradient-to-r from-accent to-secondary text-white font-bold rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                送信する
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- 設定ファイルとJavaScript -->
-    <script src="config.js"></script>
-    <script src="contact.js"></script>
-  </body>
+  </section>
+
+  <!-- フッター -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/contact.js"></script>
+
+  <!-- フォームフィールドの表示アニメーション -->
+  <script>
+    // ページ読み込み時にフォームフィールドを順次表示
+    document.addEventListener('DOMContentLoaded', () => {
+      const fields = document.querySelectorAll('.form-field');
+      fields.forEach((field, index) => {
+        setTimeout(() => {
+          field.classList.add('visible');
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
 </html>

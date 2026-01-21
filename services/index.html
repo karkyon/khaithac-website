@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="カイタックジャパンのサービス一覧 - ACCESS開発、TALON開発、スクラッチ開発、Web・モバイルアプリ開発">
+  <meta name="keywords" content="サービス,システム開発,ACCESS,TALON,ローコード,スクラッチ開発,Webアプリ,モバイルアプリ,カイタックジャパン">
+  <title>サービス一覧 | カイタックジャパン</title>
+  
+  <!-- ファビコン - 複数サイズ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- コンポーネントローダー -->
+  <script src="../assets/js/components-loader.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'roboto': ['Roboto', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#00A0E9',
+            'secondary': '#0088CC',
+            'accent': '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-roboto text-gray-800 bg-gray-50">
+
+  <!-- ナビゲーション -->
+  <div id="header-placeholder"></div>
+
+  <!-- ヒーローセクション -->
+  <section class="relative bg-gradient-to-br from-primary/10 via-white to-accent/5 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-right mb-12">
+        <h1 class="text-5xl md:text-7xl font-bold text-primary mb-4">Services</h1>
+        <p class="text-3xl md:text-5xl font-bold text-gray-900">サービス一覧</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+          お客様の業務プロセスを深く理解し、<br class="hidden md:block">
+          「使いやすい」を超えて「自然に使いたくなる」システムを創る。<br>
+          現場の担当者が「これが欲しかった」と実感できる機能から、<br class="hidden md:block">
+          経営層が「これで変わる」と確信できる基幹システムまで、<br>
+          業務の実態に完全にフィットした開発を行います。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- サービスカード -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- サービス1: ACCESS開発 -->
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group border-2 border-blue-100">
+          <div class="p-10 md:p-12">
+            <div class="flex items-start mb-8">
+              <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-3">改修・移行</span>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">ACCESS開発</h2>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              ACCESSを、もっと使いやすく、もっと頼れる存在に。現状の課題を見える化し、今もこれからも使い続けられる業務システムへアップデート。
+            </p>
+            
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">現状分析・課題の見える化</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">段階的な改修・最適化</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">他システムへの移行支援</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">属人化解消・ドキュメント整備</span>
+              </div>
+            </div>
+            
+            <a href="access.html" class="inline-flex items-center justify-center w-full px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl text-lg group-hover:scale-105">
+              詳しく見る
+              <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- サービス2: TALON（ローコード）開発 -->
+        <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group border-2 border-emerald-100">
+          <div class="p-10 md:p-12">
+            <div class="flex items-start mb-8">
+              <div class="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-600 text-sm font-semibold rounded-full mb-3">超高速開発</span>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">ローコード（TALON）開発</h2>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              ビジネスを加速する、次世代のローコード開発。TALONを活用した迅速で柔軟なシステム構築で、デジタル変革を実現します。
+            </p>
+            
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">開発期間70%短縮</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">コードレスで業務アプリ構築</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">200種類以上のデータ連携</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">内製化支援・教育サポート</span>
+              </div>
+            </div>
+            
+            <a href="lowcode.html" class="inline-flex items-center justify-center w-full px-8 py-4 bg-accent text-white font-bold rounded-lg hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl text-lg group-hover:scale-105">
+              詳しく見る
+              <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- サービス3: スクラッチ開発 -->
+        <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group border-2 border-purple-100">
+          <div class="p-10 md:p-12">
+            <div class="flex items-start mb-8">
+              <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-purple-200 transition-colors flex-shrink-0">
+                <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full mb-3">オーダーメイド</span>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">スクラッチ開発</h2>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              お客様の業務フローや現場の使い方にフィットした、完全オリジナルの業務システムを構築。既製品では実現できない「本当に使える仕組み」を提供。
+            </p>
+            
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">最適な技術スタックを選定</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">プロトタイピング開発手法</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">柔軟な仕様変更対応</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">運用後まで見据えた提案</span>
+              </div>
+            </div>
+            
+            <a href="scratch.html" class="inline-flex items-center justify-center w-full px-8 py-4 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-lg group-hover:scale-105">
+              詳しく見る
+              <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- サービス4: Web・モバイルアプリ開発 -->
+        <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group border-2 border-amber-100">
+          <div class="p-10 md:p-12">
+            <div class="flex items-start mb-8">
+              <div class="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mr-6 group-hover:bg-amber-200 transition-colors flex-shrink-0">
+                <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block px-3 py-1 bg-amber-100 text-amber-600 text-sm font-semibold rounded-full mb-3">SaaS・アプリ</span>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Web・モバイルアプリ開発</h2>
+              </div>
+            </div>
+            
+            <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              中小企業向けに、低コスト・短期間でWebアプリやモバイルアプリを提供。自社開発のSaaS製品もご活用いただけます。
+            </p>
+            
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">自社SaaS製品の提供</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">MVPアプローチでの開発</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">マルチデバイス対応</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">クラウドネイティブ設計</span>
+              </div>
+            </div>
+            
+            <a href="webapp.html" class="inline-flex items-center justify-center w-full px-8 py-4 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600 transition-all duration-300 shadow-lg hover:shadow-xl text-lg group-hover:scale-105">
+              詳しく見る
+              <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 開発プロセス -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          共通の開発プロセス
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          すべてのサービスで、お客様に寄り添った丁寧な開発プロセスを実践しています
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all text-center">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+            <span class="text-white font-bold text-2xl">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">ヒアリング</h3>
+          <p class="text-gray-600 text-sm">
+            現状の課題や要望を丁寧にお伺いします
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all text-center">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+            <span class="text-white font-bold text-2xl">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">提案・設計</h3>
+          <p class="text-gray-600 text-sm">
+            最適なソリューションをご提案
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all text-center">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+            <span class="text-white font-bold text-2xl">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">開発・テスト</h3>
+          <p class="text-gray-600 text-sm">
+            段階的に開発し品質を確保
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+            <span class="text-white font-bold text-2xl">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">導入・運用</h3>
+          <p class="text-gray-600 text-sm">
+            継続的なサポート体制
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        まずはお気軽にご相談ください
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+        どのサービスが最適か分からない場合でも大丈夫です。<br>
+        お客様の課題をお伺いし、最適なソリューションをご提案いたします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="../contact.html" class="inline-block px-10 py-5 bg-white text-primary font-bold rounded-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg">
+          お問い合わせ
+        </a>
+        <a href="../works/index.html" class="inline-block px-10 py-5 bg-accent text-white font-bold rounded-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 text-lg">
+          開発実績を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>

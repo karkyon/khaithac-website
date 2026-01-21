@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TALON（ローコード）開発・導入支援 - 最速で高品質な業務システム開発を実現">
+  <meta name="keywords" content="TALON,ローコード,低コード開発,超高速開発,業務システム,カイタックジャパン">
+  <title>TALON（ローコード）開発 | カイタックジャパン</title>
+  
+  <!-- ファビコン - 複数サイズ -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- コンポーネントローダー -->
+  <script src="../assets/js/components-loader.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'roboto': ['Roboto', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#00A0E9',
+            'secondary': '#0088CC',
+            'accent': '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-roboto text-gray-800 bg-gray-50">
+
+  <!-- ナビゲーション -->
+  <div id="header-placeholder"></div>
+
+  <!-- ヒーローセクション -->
+  <section class="relative bg-gradient-to-br from-primary/10 via-white to-accent/5 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-block px-6 py-2 bg-accent/10 rounded-full mb-6">
+          <span class="text-accent font-bold text-lg">ローコード（TALON）開発・導入支援サービス</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          ビジネスを加速する、<br>
+          次世代型ローコード開発
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+          TALONは独自技術のブロックシステムとルールエンジンで<br>
+          コーディングにかかる時間を限りなく０に近づけ、<br>
+          開発コストと開発時間の圧倒的な削減を実現します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALONとは -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 mb-16 border-2 border-primary/20">
+        <div class="flex items-center mb-6">
+          <div class="w-2 h-12 bg-primary mr-4"></div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+            TALON｜ローコード開発ツール
+          </h2>
+        </div>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+          TALONとは、株式会社HOIPOIが提供しているローコード開発ツール製品です。
+        </p>
+        <a href="https://talon.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary font-semibold transition-colors">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+          https://talon.jp/
+        </a>
+      </div>
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          "最速"で"高品質"の<br>
+          業務システム開発を実現するTALON
+        </h2>
+        <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          私たちは、HOIPOI社が提供するローコード開発ツール「TALON」を活用し、<br>
+          企業のDXを力強く推進します。<br>
+          システム開発の効率化と内製化を両立するTALONの力を最大限に引き出し、<br>
+          企画・設計から開発、運用、社内導入支援まで、ワンストップでサポートします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALONの優れた特長 -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          TALONの優れた特長
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 特長1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            コードレスでつくる、<br>
+            現場のための業務アプリ
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            TALONは、ブロックシステムとルールエンジン技術を活用し、Webブラウザ上の操作だけで業務システムを構築可能。コーディングなしで、現場の要件に沿った柔軟な業務アプリを作成できます。
+          </p>
+        </div>
+
+        <!-- 特長2 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            自由度の高いレイアウトと<br>
+            リアルタイムUI
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            フリーレイアウト機能により、見た目の美しさと自由な設計が両立。チャートやグラフなどのグラフィカル要素も自在に組み込め、ユーザー体験に優れた業務システムを構築できます。
+          </p>
+        </div>
+
+        <!-- 特長3 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            200種類以上のデータ連携
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            Salesforceをはじめ、複数のRDBやクラウドサービスとの連携が可能。リアルタイムで異なるデータを統合し、IoTシステムやマルチデバイス環境での活用にも最適です。
+          </p>
+        </div>
+
+        <!-- 特長4 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            構築環境を選ばない。<br>
+            クラウドもオンプレも自在に対応
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            TALONは、提供クラウド環境はもちろん、貴社の自社クラウド、オンプレミス環境でも構築可能。インフラに縛られず、セキュリティや業務要件に応じた最適な環境を選べます。
+          </p>
+        </div>
+
+        <!-- 特長5 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            圧倒的な開発スピード
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            従来のスクラッチ開発と比較して、開発期間を最大70%短縮。ビジネスのスピードに合わせた迅速なシステム構築が可能です。
+          </p>
+        </div>
+
+        <!-- 特長6 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            低コストでの開発を実現
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            開発工数の大幅削減により、コストを最小限に抑えた業務システムの構築が可能。中小企業でも導入しやすい価格帯を実現します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入支援サービス -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          導入から開発・運用・内製化まで、<br>
+          TALON活用をワンストップで支援します
+        </h2>
+      </div>
+
+      <!-- サービス詳細 -->
+      <div class="space-y-8">
+        <!-- サービス1 -->
+        <div class="bg-gradient-to-r from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-xl flex items-center justify-center mr-6 shadow-md">
+              <span class="text-white font-bold text-2xl">01</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">TALON導入コンサルティング</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                ツールの導入に先立ち、業務や課題を丁寧にヒアリングし、最適な導入プランを策定します。<br>
+                要件定義・PoC支援も対応可能です。
+              </p>
+              <ul class="grid md:grid-cols-2 gap-3">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">業務課題の分析・整理</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">導入効果の試算</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">導入計画の策定</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">PoC（概念実証）支援</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- サービス2 -->
+        <div class="bg-gradient-to-r from-emerald-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-16 h-16 bg-accent rounded-xl flex items-center justify-center mr-6 shadow-md">
+              <span class="text-white font-bold text-2xl">02</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">設計・開発支援</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                TALONを活用したシステム設計から開発までを専門チームが担当。<br>
+                従来の開発より短期間・低コストでの構築が可能です。
+              </p>
+              <ul class="grid md:grid-cols-2 gap-3">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">業務フローの可視化・設計</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">データベース設計</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">画面設計・UI/UX設計</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">TALON開発・構築</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- サービス3 -->
+        <div class="bg-gradient-to-r from-cyan-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mr-6 shadow-md">
+              <span class="text-white font-bold text-2xl">03</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">教育・トレーニング</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                TALONの操作方法から開発手法まで、実践的なトレーニングを提供。<br>
+                社内での自律的な開発・運用体制の構築をサポートします。
+              </p>
+              <ul class="grid md:grid-cols-2 gap-3">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">基礎操作トレーニング</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">開発手法の習得支援</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">運用・保守方法の教育</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">内製化支援</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- サービス4 -->
+        <div class="bg-gradient-to-r from-purple-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mr-6 shadow-md">
+              <span class="text-white font-bold text-2xl">04</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">運用・保守サポート</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                導入後の運用フェーズも継続的にサポート。<br>
+                システムの安定稼働と継続的な改善をお手伝いします。
+              </p>
+              <ul class="grid md:grid-cols-2 gap-3">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">システム運用支援</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">トラブルシューティング</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">機能追加・改善</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700">定期メンテナンス</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入メリット -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          TALON導入のメリット
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">開発スピードの大幅向上</h3>
+              <p class="text-sm text-gray-600">従来の70%の時間で開発完了</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">コスト削減</h3>
+              <p class="text-sm text-gray-600">開発工数削減でコストダウン</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">高品質な成果物</h3>
+              <p class="text-sm text-gray-600">標準化された開発プロセス</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">柔軟な仕様変更</h3>
+              <p class="text-sm text-gray-600">ビジュアル開発で迅速に対応</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">内製化の実現</h3>
+              <p class="text-sm text-gray-600">非エンジニアでも開発可能</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+          <div class="flex items-start">
+            <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+              <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-2">ドキュメント自動生成</h3>
+              <p class="text-sm text-gray-600">保守性の向上</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        TALON導入のご相談はこちら
+      </h2>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        ローコード開発で業務効率を劇的に改善しませんか？<br>
+        お客様の課題に最適なTALON活用プランをご提案します。
+      </p>
+      <a href="../contact.html" class="inline-block px-10 py-4 bg-white text-primary font-bold rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+        無料相談を申し込む
+      </a>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>
