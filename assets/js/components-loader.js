@@ -5,11 +5,52 @@
  * 使い方:
  * 1. HTMLの<body>の最初に <div id="header-placeholder"></div> を追加
  * 2. HTMLの<body>の最後に <div id="footer-placeholder"></div> を追加
- * 3. </body>の前にこのスクリプトを読み込む: <script src="/assets/js/components-loader.js"></script>
+ * 3. <head>内でこのスクリプトを読み込む
+ *    - ルートページ: <script src="/assets/js/components-loader.js"></script>
+ *    - サブページ: <script src="../assets/js/components-loader.js"></script>
  */
 
 (function() {
   'use strict';
+
+  /**
+   * スクリプトの配置場所を基準にベースパスを取得
+   */
+  function getBasePath() {
+    // 現在のスクリプトのsrcを取得
+    const scripts = document.getElementsByTagName('script');
+    let scriptSrc = '';
+    
+    for (let i = 0; i < scripts.length; i++) {
+      const src = scripts[i].src;
+      if (src && src.includes('components-loader.js')) {
+        scriptSrc = src;
+        break;
+      }
+    }
+    
+    if (!scriptSrc) {
+      console.error('components-loader.js not found');
+      return '';
+    }
+    
+    // スクリプトのパスからベースパスを計算
+    const url = new URL(scriptSrc);
+    const pathname = url.pathname;
+    
+    // /assets/js/components-loader.js から / を取得
+    // または ../assets/js/components-loader.js から ../ を取得
+    if (pathname.startsWith('/assets/js/')) {
+      return '/';
+    } else if (scriptSrc.includes('../assets/js/')) {
+      return '../';
+    } else {
+      // フォールバック: 現在のページのパスから計算
+      const currentPath = window.location.pathname;
+      const depth = (currentPath.match(/\//g) || []).length - 1;
+      return depth > 0 ? '../'.repeat(depth) : '/';
+    }
+  }
 
   /**
    * コンポーネントを読み込む
@@ -54,26 +95,11 @@
   }
 
   /**
-   * 現在のページに応じてコンポーネントのパスを調整
+   * コンポーネントのパスを取得
    */
   function getComponentPath(componentName) {
-    const path = getCurrentPath();
-    const depth = (path.match(/\//g) || []).length - 1;
-    
-    // ルートからの相対パスを計算
-    let prefix = '';
-    if (depth === 1) {
-      // ルートディレクトリ (e.g., /index.html, /company.html)
-      prefix = '';
-    } else if (depth === 2) {
-      // 1階層下 (e.g., /services/access.html)
-      prefix = '../';
-    } else if (depth === 3) {
-      // 2階層下 (e.g., /services/sub/page.html)
-      prefix = '../../';
-    }
-    
-    return `${prefix}components/${componentName}.html`;
+    const basePath = getBasePath();
+    return `${basePath}components/${componentName}.html`;
   }
 
   /**
@@ -91,15 +117,19 @@
       
       switch(page) {
         case 'home':
-          isActive = path === '/' || path === '/index.html';
+          // HOMEは完全一致のみ（ルート、index.html、/index.htmlのみ）
+          isActive = path === '/' || path === '/index.html' || path === '' || 
+                    path.match(/^\/index\.html$/);
           break;
         case 'services':
+          // servicesディレクトリ内のすべてのページ（index.htmlを含む）
           isActive = path.includes('/services/');
           break;
         case 'company':
           isActive = path.includes('company.html');
           break;
         case 'works':
+          // worksディレクトリ内のすべてのページ（index.htmlを含む）
           isActive = path.includes('/works/');
           break;
         case 'contact':
@@ -133,6 +163,7 @@
    */
   async function init() {
     console.log('🔄 Loading components...');
+    console.log('Base path:', getBasePath());
     
     // ヘッダーとフッターを並行して読み込む
     await Promise.all([
