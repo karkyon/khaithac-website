@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TALON（ローコード）開発・導入支援 - 最速で高品質な業務システム開発を実現">
+  <meta name="description" content="TALON(ローコード)開発・導入支援 - 最速で高品質な業務システム開発を実現">
   <meta name="keywords" content="TALON,ローコード,低コード開発,超高速開発,業務システム,カイタックジャパン">
-  <title>TALON（ローコード）開発 | カイタックジャパン</title>
+  <title>TALON(ローコード)開発 | カイタックジャパン</title>
   
-  <!-- ファビコン - 複数サイズ -->
+  <!-- ファビコン -->
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="../site.webmanifest">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +44,32 @@
   
   <style>
     html { scroll-behavior: smooth; }
+    /* HEROセクション背景画像スタイル */
+    .hero-background {
+      background-image: linear-gradient(rgba(0, 160, 233, 0.7), rgba(0, 160, 233, 0.7)), url('../assets/images/hero/talon_hero_bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* CTAセクション透かしロゴスタイル */
+    .cta-watermark {
+      position: relative;
+      background: linear-gradient(to right, rgba(0, 160, 233, 1), rgba(0, 136, 204, 1));
+    }
+    .cta-watermark::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('../assets/images/talon/talon_white_text.png');
+      background-size: 600px auto;
+      background-position: left center;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="font-roboto text-gray-800 bg-gray-50">
@@ -52,18 +77,18 @@
   <!-- ナビゲーション -->
   <div id="header-placeholder"></div>
 
-  <!-- ヒーローセクション -->
-  <section class="relative bg-gradient-to-br from-primary/10 via-white to-accent/5 py-20">
+  <!-- ヒーローセクション（①背景画像追加） -->
+  <section class="relative hero-background py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-block px-6 py-2 bg-accent/10 rounded-full mb-6">
-          <span class="text-accent font-bold text-lg">ローコード（TALON）開発・導入支援サービス</span>
+        <div class="inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+          <span class="text-white font-bold text-lg">ローコード(TALON)開発・導入支援サービス</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
           ビジネスを加速する、<br>
           次世代型ローコード開発
         </h1>
-        <p class="text-xl text-gray-600 leading-relaxed">
+        <p class="text-xl text-white leading-relaxed drop-shadow-md">
           TALONは独自技術のブロックシステムとルールエンジンで<br>
           コーディングにかかる時間を限りなく０に近づけ、<br>
           開発コストと開発時間の圧倒的な削減を実現します。
@@ -72,15 +97,19 @@
     </div>
   </section>
 
-  <!-- TALONとは -->
+  <!-- TALONとは（②ロゴ追加 - 右寄せ） -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 mb-16 border-2 border-primary/20">
-        <div class="flex items-center mb-6">
-          <div class="w-2 h-12 bg-primary mr-4"></div>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-            TALON｜ローコード開発ツール
-          </h2>
+      <div class="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 md:p-12 mb-16 border-2 border-primary/20 max-w-5xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center">
+            <div class="w-2 h-12 bg-primary mr-4"></div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+              TALON｜ローコード開発ツール
+            </h2>
+          </div>
+          <!-- ロゴを右寄せ -->
+          <img src="../assets/images/talon/talon.png" alt="TALON" class="h-16 w-auto ml-6">
         </div>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed">
           TALONとは、株式会社HOIPOIが提供しているローコード開発ツール製品です。
@@ -233,35 +262,35 @@
               <span class="text-white font-bold text-2xl">01</span>
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">TALON導入コンサルティング</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">導入コンサルティング</h3>
               <p class="text-gray-600 leading-relaxed mb-4">
-                ツールの導入に先立ち、業務や課題を丁寧にヒアリングし、最適な導入プランを策定します。<br>
-                要件定義・PoC支援も対応可能です。
+                お客様の業務課題をヒアリングし、TALONの最適な活用方法をご提案。<br>
+                導入計画の策定から、システム要件定義まで伴走します。
               </p>
               <ul class="grid md:grid-cols-2 gap-3">
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  <span class="text-gray-700">業務課題の分析・整理</span>
+                  <span class="text-gray-700">業務分析・課題抽出</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  <span class="text-gray-700">導入効果の試算</span>
+                  <span class="text-gray-700">システム要件定義</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  <span class="text-gray-700">導入計画の策定</span>
+                  <span class="text-gray-700">導入計画策定</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  <span class="text-gray-700">PoC（概念実証）支援</span>
+                  <span class="text-gray-700">ROI試算</span>
                 </li>
               </ul>
             </div>
@@ -494,9 +523,9 @@
     </div>
   </section>
 
-  <!-- CTAセクション -->
-  <section class="py-16 bg-gradient-to-r from-primary to-secondary">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <!-- CTAセクション（③透かしロゴ追加 - 修正版） -->
+  <section class="py-16 cta-watermark relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
         TALON導入のご相談はこちら
       </h2>
