@@ -1,0 +1,126 @@
+/* NEWS パルスレーダー用スタイル */
+
+/* パルスリングアニメーション */
+@keyframes pulse-expand {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0.75;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-expand 3s ease-out infinite;
+}
+
+/* フェードインアニメーション */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* 粒子エフェクト */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00E676;
+  border-radius: 50%;
+  animation: particle-float 2s ease-in-out infinite;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.particle-3 {
+  top: 40%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(20px, -20px);
+    opacity: 1;
+  }
+}
+
+/* 詳細コンテンツのスライド */
+.detail-content {
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* グロー効果のパルス */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.glow-effect {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* モーフィングカードのホバーエフェクト */
+.morph-card {
+  transition: all 0.3s ease;
+}
+
+.morph-card:hover {
+  transform: scale(1.05);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 640px) {
+  .news-radar {
+    min-height: 500px !important;
+  }
+  
+  .pulse-ring {
+    animation: pulse-expand-mobile 3s ease-out infinite;
+  }
+  
+  @keyframes pulse-expand-mobile {
+    0% {
+      width: 20px;
+      height: 20px;
+      opacity: 0.75;
+    }
+    100% {
+      width: 250px;
+      height: 250px;
+      opacity: 0;
+    }
+  }
+}
