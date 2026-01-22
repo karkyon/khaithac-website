@@ -54,7 +54,7 @@
     /* CTAセクション透かしロゴスタイル */
     .cta-watermark {
       position: relative;
-      background: linear-gradient(to right, rgba(0, 160, 233, 1), rgba(0, 136, 204, 1));
+      background: linear-gradient(to right, #4A9FD8, #025D9C);  /* 左側を明るいブルーに */
     }
     .cta-watermark::before {
       content: '';
@@ -67,7 +67,8 @@
       background-size: 600px auto;
       background-position: left center;
       background-repeat: no-repeat;
-      opacity: 0.55;
+      opacity: 0.4;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));  /* 白い影を追加 */
       pointer-events: none;
     }
   </style>
@@ -524,8 +525,8 @@
   </section>
 
   <!-- CTAセクション（③透かしロゴ追加 - 修正版） -->
-  <section class="py-16 bg-gradient-to-r from-[#0371BC] to-[#025D9C]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-16 cta-watermark relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
         TALON導入のご相談はこちら
       </h2>
