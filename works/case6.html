@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access+SQL Server 全国6拠点統合製造管理システム開発事例 - カイタックジャパン">
+    <title>Access 全国6拠点製造管理システム | 開発事例 | カイタックジャパン</title>
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- コンポーネントローダー -->
+    <script src="../assets/js/components-loader.js"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00A0E9',
+                        'secondary': '#0088CC',
+                        'accent': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="font-roboto text-gray-800">
+
+    <!-- ナビゲーション -->
+    <div id="header-placeholder"></div>
+
+    <!-- ヒーローセクション -->
+    <section class="relative bg-gradient-to-br from-teal-600 to-teal-800 py-20 md:py-32">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptLTIwIDIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] bg-repeat"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <a href="index.html" class="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    事例一覧に戻る
+                </a>
+            </div>
+            
+            <div class="max-w-5xl">
+                <div class="mb-6 flex items-center gap-3">
+                    <span class="inline-block px-4 py-2 bg-teal-100 text-teal-800 text-sm font-bold rounded-full">● 製造業</span>
+                    <span class="inline-block px-4 py-2 bg-green-100 text-green-800 text-sm font-bold rounded-full">● Access開発</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    オフコンからの脱却<br>Access+SQL Serverで実現する<br>全国6拠点統合製造管理
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                    40年使い続けたオフコンシステムを、<br>
+                    Access VBAで8ヶ月で完全移行。<br>
+                    Site-to-Site VPNで全国6拠点をリアルタイム統合しました。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロジェクト概要 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-6 mb-16">
+                <!-- 業種 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">業種</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">金属加工製造業（受注生産）</p>
+                </div>
+
+                <!-- 規模 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">展開規模</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">全国6事業所 / 従業員120名</p>
+                </div>
+
+                <!-- システム構成 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">システム構成</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">Access 40端末 + SQL Server</p>
+                </div>
+
+                <!-- 開発期間 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">開発期間</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">8ヶ月（オフコン移行）</p>
+                </div>
+            </div>
+
+            <!-- 導入効果 -->
+            <div class="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 md:p-12 border-2 border-teal-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">導入効果</h2>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-teal-600 mb-2">50%</div>
+                        <p class="text-gray-700 font-semibold text-sm">見積作成時間削減</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">80%</div>
+                        <p class="text-gray-700 font-semibold text-sm">作業日報作成時間削減</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">100%</div>
+                        <p class="text-gray-700 font-semibold text-sm">6拠点リアルタイム連携</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">90%</div>
+                        <p class="text-gray-700 font-semibold text-sm">保守コスト削減</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">35%</div>
+                        <p class="text-gray-700 font-semibold text-sm">営業効率向上</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技術スタック -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">技術スタック・システム構成</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                Access VBAの開発速度と、SQL Serverの堅牢性を組み合わせた、拠点分散型クライアントサーバーシステム
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- クライアント -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-teal-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">クライアント</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>FE:</strong> Microsoft Access 2019</li>
+                        <li>• <strong>言語:</strong> VBA（Visual Basic for Applications）</li>
+                        <li>• <strong>台数:</strong> 40端末（全国6拠点）</li>
+                        <li>• <strong>接続:</strong> ODBC接続（SQL Server）</li>
+                    </ul>
+                </div>
+
+                <!-- データベース -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">データベース</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>RDBMS:</strong> SQL Server 2019 Standard</li>
+                        <li>• <strong>テーブル数:</strong> 約120テーブル</li>
+                        <li>• <strong>ストアド:</strong> 約80プロシージャ</li>
+                        <li>• <strong>バックアップ:</strong> 日次フル + トランザクションログ</li>
+                    </ul>
+                </div>
+
+                <!-- サーバ環境 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">サーバ環境</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>OS:</strong> Windows Server 2019</li>
+                        <li>• <strong>構成:</strong> オンプレミス（本社データセンター）</li>
+                        <li>• <strong>スペック:</strong> Xeon 16コア / 64GB RAM</li>
+                        <li>• <strong>ストレージ:</strong> RAID 10（2TB SSD）</li>
+                    </ul>
+                </div>
+
+                <!-- ネットワーク -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">ネットワーク</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>VPN:</strong> Site-to-Site VPN × 6拠点</li>
+                        <li>• <strong>暗号化:</strong> IPsec（AES-256）</li>
+                        <li>• <strong>帯域:</strong> 各拠点 50Mbps保証</li>
+                        <li>• <strong>リモート:</strong> SSL-VPN（営業15名）</li>
+                    </ul>
+                </div>
+
+                <!-- ハンディ連携 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">ハンディ端末</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>端末:</strong> 産業用ハンディターミナル × 25台</li>
+                        <li>• <strong>通信:</strong> Wi-Fi経由でSQL Server接続</li>
+                        <li>• <strong>読取:</strong> バーコード/QRコード</li>
+                        <li>• <strong>機能:</strong> 工程進捗収集・実績入力</li>
+                    </ul>
+                </div>
+
+                <!-- システム規模 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-cyan-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">システム規模</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>フォーム数:</strong> 約180フォーム</li>
+                        <li>• <strong>レポート:</strong> 約60帳票</li>
+                        <li>• <strong>VBAコード:</strong> 約8万行</li>
+                        <li>• <strong>データ量:</strong> 累計300万レコード</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課題と解決策 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">課題と解決策</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- 課題 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">導入前の課題</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">40年前のオフコンシステム</h4>
+                                <p class="text-gray-600 text-sm">1980年代に導入したオフコン（オフィスコンピュータ）が限界。保守費用が年間500万円、部品調達も困難。メーカーサポートも終了間近</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">複雑な見積ロジックの再現困難</h4>
+                                <p class="text-gray-600 text-sm">40年間の業務ノウハウが詰まった複雑な見積計算ロジック。材料・加工・塗装・梱包など20段階の計算式。完全再現が移行の必須条件</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">拠点間のデータ連携遅延</h4>
+                                <p class="text-gray-600 text-sm">全国6拠点のデータは夜間バッチで集約。リアルタイムな在庫確認・進捗把握ができず、顧客への回答に時間がかかる</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">作業日報の手書き入力</h4>
+                                <p class="text-gray-600 text-sm">各工程の作業時間を手書き記録し、事務所で手入力。1日あたり作業者30名分の日報入力に2時間。転記ミスも多発</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">外出先からの情報アクセス不可</h4>
+                                <p class="text-gray-600 text-sm">営業15名が外出先から見積・在庫確認できず、都度電話で確認。顧客訪問中の即答ができず、商談機会を逃す</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 解決策 -->
+                <div class="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 shadow-lg border-2 border-teal-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Access+SQL Serverで実現</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">8ヶ月でオフコン完全移行</h4>
+                                <p class="text-gray-600 text-sm">Access VBAの開発速度でスピーディに構築。オフコンの全機能を完全移行し、保守費用90%削減。年間450万円のコスト圧縮に成功</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">VBAで複雑見積ロジック完全再現</h4>
+                                <p class="text-gray-600 text-sm">40年分の業務ノウハウをVBAコードで実装。材料原価・加工時間・歩留まり率など20段階の計算を自動化。見積作成時間50%削減</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Site-to-Site VPNで6拠点統合</h4>
+                                <p class="text-gray-600 text-sm">全国6拠点をVPN接続し、SQL Serverで一元管理。全拠点の在庫・進捗をリアルタイム共有。拠点間の情報連携が100%即時化</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">ハンディで自動作業日報生成</h4>
+                                <p class="text-gray-600 text-sm">工程カードをハンディで読み取り、開始・終了時刻を自動記録。SQL Serverで集計し、作業日報を自動生成。日報入力時間80%削減</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">SSL-VPNで営業の外出先アクセス</h4>
+                                <p class="text-gray-600 text-sm">営業15名にSSL-VPN接続環境を提供。外出先から見積作成・在庫確認・受注登録が可能に。営業効率35%向上、成約率も改善</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- システム機能詳細 -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">システム機能詳細</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                見積から請求まで、受注生産製造業の全業務をカバーする統合基幹システム
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 機能1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">見積管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 複雑計算ロジック（20段階）</li>
+                        <li>• 材料・加工・塗装原価自動計算</li>
+                        <li>• 過去見積流用機能</li>
+                        <li>• 見積書PDF自動生成</li>
+                    </ul>
+                </div>
+
+                <!-- 機能2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">受注・製造管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 受注登録・製造指示</li>
+                        <li>• 工程別進捗管理</li>
+                        <li>• 製造指示書発行</li>
+                        <li>• 納期管理・遅延アラート</li>
+                    </ul>
+                </div>
+
+                <!-- 機能3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">発注・仕入管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 材料発注・納期管理</li>
+                        <li>• 仕入先マスタ管理</li>
+                        <li>• 入荷検収・検品</li>
+                        <li>• 買掛金管理</li>
+                    </ul>
+                </div>
+
+                <!-- 機能4 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">在庫管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 6拠点在庫リアルタイム表示</li>
+                        <li>• ロット・シリアル管理</li>
+                        <li>• 拠点間移動管理</li>
+                        <li>• 棚卸機能</li>
+                    </ul>
+                </div>
+
+                <!-- 機能5 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">ハンディ工程管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 工程カードバーコード読取</li>
+                        <li>• 開始・終了時刻自動記録</li>
+                        <li>• 作業日報自動生成</li>
+                        <li>• 工程別実績集計</li>
+                    </ul>
+                </div>
+
+                <!-- 機能6 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">出荷・納品・請求</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 出荷指示・納品書発行</li>
+                        <li>• 配送業者連携</li>
+                        <li>• 請求書一括発行</li>
+                        <li>• 売掛金管理・入金消込</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開発プロセス -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">開発プロセスと工夫</h2>
+
+            <div class="max-w-5xl mx-auto">
+                <!-- フェーズ1 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-teal-100 text-teal-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Phase 1</div>
+                            <div class="text-xs mt-1">2ヶ月</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">要件定義・オフコン分析</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• オフコンシステムの全機能調査（画面200枚以上を記録）</li>
+                            <li>• 複雑な見積ロジックの詳細ヒアリング（経験者5名）</li>
+                            <li>• 40年分の業務フロー・帳票の棚卸し</li>
+                            <li>• 6拠点のネットワーク環境調査</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- フェーズ2 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-blue-100 text-blue-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Phase 2</div>
+                            <div class="text-xs mt-1">1.5ヶ月</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">インフラ構築・DB設計</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• SQL Server環境構築（本社データセンター）</li>
+                            <li>• Site-to-Site VPN構築（6拠点 × IPsec設定）</li>
+                            <li>• データベース設計（120テーブル、正規化）</li>
+                            <li>• オフコンデータ移行ツール開発</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- フェーズ3 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-green-100 text-green-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Phase 3</div>
+                            <div class="text-xs mt-1">3.5ヶ月</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Access VBA開発</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Access VBAで全機能実装（180フォーム、60レポート）</li>
+                            <li>• 見積ロジックのVBAコード化（20段階計算式）</li>
+                            <li>• ハンディ連携機能実装（工程進捗自動収集）</li>
+                            <li>• SSL-VPN接続環境構築（営業用）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- フェーズ4 -->
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-purple-100 text-purple-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Phase 4</div>
+                            <div class="text-xs mt-1">1ヶ月</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">移行・テスト・稼働</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• オフコンデータ全量移行（過去10年分 300万レコード）</li>
+                            <li>• 見積計算ロジック検証（100件の過去見積で照合）</li>
+                            <li>• 6拠点同時テスト（40端末での負荷テスト）</li>
+                            <li>• ユーザー研修（拠点別5回 × 延べ120名）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声 -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">お客様の声</h2>
+            
+            <div class="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 md:p-12 border-2 border-teal-100 shadow-lg">
+                <div class="flex items-start mb-6">
+                    <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+                            「創業以来40年間使い続けたオフコンシステムが限界を迎え、移行を決断しました。最大の懸念は、複雑な見積ロジックを新システムで完全再現できるかどうかでした。40年分のノウハウが詰まった計算式を、どう移行するか...。<br><br>
+                            
+                            カイタックジャパンさんは、Access VBAでこれを見事に実現してくれました。材料原価、加工時間、歩留まり率、塗装工程、梱包費用など、20段階にわたる計算ロジックを完璧に再現。過去の見積100件で照合しても、円単位まで一致しました。<br><br>
+                            
+                            全国6拠点の統合も素晴らしいです。これまで夜間バッチでしか連携できなかった在庫情報が、リアルタイムで全拠点共有されます。大阪の営業が名古屋工場の在庫を即座に確認でき、顧客への回答スピードが格段に上がりました。<br><br>
+                            
+                            ハンディによる工程管理も大変好評です。工程カードをピッとスキャンするだけで、開始・終了時刻が自動記録され、作業日報が自動生成されます。これまで2時間かかっていた日報入力が、ほぼゼロになりました。<br><br>
+                            
+                            営業メンバーも喜んでいます。外出先からSSL-VPNで接続し、見積作成や在庫確認ができます。顧客訪問中に「在庫ありますよ」と即答でき、成約率が目に見えて向上しました。<br><br>
+                            
+                            わずか8ヶ月でオフコン完全移行を実現し、保守費用も年間450万円削減できました。Accessの開発速度と柔軟性、SQL Serverの堅牢性、両方のメリットを活かした最高のシステムです。」
+                        </p>
+                        <div class="border-t-2 border-teal-200 pt-4">
+                            <p class="font-bold text-gray-900">代表取締役 様</p>
+                            <p class="text-gray-600">金属加工製造業（全国6拠点・従業員120名）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-br from-teal-600 to-teal-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                オフコン・レガシーシステムからの移行を<br>ご検討中ですか？
+            </h2>
+            <p class="text-teal-100 text-lg mb-8 leading-relaxed">
+                Access + SQL Serverによる短期間・低コストでの<br>
+                システム移行・刷新を実現します。<br>
+                複雑な業務ロジックも完全再現可能です。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-teal-600 font-bold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    お問い合わせ
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="../services/access.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-700 text-white font-bold rounded-lg hover:bg-teal-900 transition-all duration-300 border-2 border-white">
+                    Access開発について
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 関連事例 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">その他の事例</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 事例1 -->
+                <a href="case1.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">製造業</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-2">製造業</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">生産管理システム全面刷新</h3>
+                        <p class="text-gray-600 text-sm">業務効率30%向上を実現</p>
+                    </div>
+                </a>
+
+                <!-- 事例5 -->
+                <a href="case5.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">ハイブリッド</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-600 text-sm font-semibold rounded-full mb-2">ハイブリッドクラウド</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">オンプレ×クラウド統合システム</h3>
+                        <p class="text-gray-600 text-sm">稼働率99.9%・コスト30%削減</p>
+                    </div>
+                </a>
+
+                <!-- 事例4 -->
+                <a href="case4.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">TALON</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full mb-2">ローコード開発</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">カンバン方式工程管理システム</h3>
+                        <p class="text-gray-600 text-sm">生産性20%向上（1ヶ月開発）</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>

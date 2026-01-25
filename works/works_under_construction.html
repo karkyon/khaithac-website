@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>開発実績・アプリ紹介 | カイタックジャパン</title>
+  <meta name="description" content="カイタックジャパンの開発実績とアプリケーション紹介ページは現在準備中です。近日公開予定。">
+  <link rel="icon" href="../favicon.ico">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00B8D4',
+            secondary: '#0277BD',
+            accent: '#00E676',
+            talon: '#0288D1'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 184, 212, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(0, 184, 212, 0.6); }
+    }
+    
+    @keyframes code-typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    .code-line {
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00B8D4;
+      animation: code-typing 2s steps(40) 1s forwards, blink 0.75s step-end infinite;
+    }
+    
+    .gear {
+      animation: rotate 4s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .progress-bar {
+      width: 0%;
+      animation: progress 3s ease-out forwards;
+    }
+    
+    @keyframes progress {
+      to { width: 75%; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
+
+  <!-- ヘッダー読み込み -->
+  <div id="header-placeholder"></div>
+
+  <!-- メインコンテンツ -->
+  <main class="pt-20 pb-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- ヒーローセクション -->
+      <div class="text-center py-16">
+        <!-- アイコン -->
+        <div class="mb-8 flex justify-center">
+          <div class="relative">
+            <!-- 回転する歯車 -->
+            <svg class="w-32 h-32 text-primary gear" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <!-- フローティングドット -->
+            <div class="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full float-animation" style="animation-delay: 0s;"></div>
+            <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-accent rounded-full float-animation" style="animation-delay: 0.5s;"></div>
+            <div class="absolute top-1/2 -right-4 w-3 h-3 bg-primary rounded-full float-animation" style="animation-delay: 1s;"></div>
+          </div>
+        </div>
+        
+        <!-- タイトル -->
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+          Coming Soon
+        </h1>
+        
+        <p class="text-3xl md:text-4xl font-bold text-white mb-4">
+          開発実績・アプリ紹介
+        </p>
+        
+        <p class="text-xl text-gray-300 mb-8">
+          現在、素晴らしいコンテンツを準備中です
+        </p>
+        
+        <!-- プログレスバー -->
+        <div class="max-w-2xl mx-auto mb-12">
+          <div class="flex justify-between text-sm text-gray-400 mb-2">
+            <span>準備状況</span>
+            <span class="text-accent font-bold">75%</span>
+          </div>
+          <div class="w-full bg-slate-700 rounded-full h-4 overflow-hidden pulse-glow">
+            <div class="progress-bar h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full"></div>
+          </div>
+        </div>
+        
+        <!-- コードタイピングエフェクト -->
+        <div class="max-w-3xl mx-auto bg-slate-800 rounded-lg p-6 text-left mb-12 border border-primary/30">
+          <div class="flex items-center mb-4">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <span class="ml-4 text-gray-400 text-sm">works_page.status</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="code-line text-accent" style="animation-delay: 0.5s;">
+              const status = "開発実績ページを構築中...";
+            </div>
+            <div class="code-line text-primary" style="animation-delay: 2.5s; animation-duration: 2.5s;">
+              const features = ["導入事例", "技術スタック", "成果指標"];
+            </div>
+            <div class="code-line text-secondary" style="animation-delay: 5s; animation-duration: 2s;">
+              console.log("近日公開予定！");
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 準備中の内容 -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">導入事例の詳細</h3>
+          <p class="text-gray-400 text-center text-sm">
+            実際のプロジェクトにおける課題、解決策、成果を具体的にご紹介します
+          </p>
+        </div>
+        
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-accent/50 transition-all duration-300 transform hover:scale-105">
+          <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">技術スタック</h3>
+          <p class="text-gray-400 text-center text-sm">
+            各プロジェクトで使用した技術や開発手法を詳しく解説します
+          </p>
+        </div>
+        
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-secondary/50 transition-all duration-300 transform hover:scale-105">
+          <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">成果指標</h3>
+          <p class="text-gray-400 text-center text-sm">
+            業務効率化の数値、コスト削減額など、具体的な成果をお見せします
+          </p>
+        </div>
+      </div>
+      
+      <!-- お問い合わせCTA -->
+      <div class="text-center bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-12 border border-primary/30">
+        <h2 class="text-3xl font-bold mb-4">開発実績について詳しく知りたい方へ</h2>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+          このページは現在準備中ですが、過去の開発実績や導入事例については<br>
+          お問い合わせいただければ詳しくご説明いたします。
+        </p>
+        <a href="../contact.html" class="inline-block px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          お問い合わせはこちら
+        </a>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- フッター読み込み -->
+  <div id="footer-placeholder"></div>
+
+  <!-- コンポーネント読み込みスクリプト -->
+  <script src="../assets/js/components-loader.js"></script>
+
+</body>
+</html>

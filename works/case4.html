@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TALON×jKanbanによるカンバン方式工程管理システム開発事例 - カイタックジャパン">
+    <title>TALON カンバン方式工程管理システム | 開発事例 | カイタックジャパン</title>
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- コンポーネントローダー -->
+    <script src="../assets/js/components-loader.js"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#00A0E9',
+                        'secondary': '#0088CC',
+                        'accent': '#10B981',
+                        'talon': '#0178BA',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="font-roboto text-gray-800">
+
+    <!-- ナビゲーション -->
+    <div id="header-placeholder"></div>
+
+    <!-- ヒーローセクション -->
+    <section class="relative bg-gradient-to-br from-purple-600 to-purple-800 py-20 md:py-32">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptLTIwIDIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] bg-repeat"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <a href="index.html" class="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    事例一覧に戻る
+                </a>
+            </div>
+            
+            <div class="max-w-5xl">
+                <div class="mb-6 flex items-center gap-3">
+                    <span class="inline-block px-4 py-2 bg-purple-100 text-purple-800 text-sm font-bold rounded-full">● 製造業</span>
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-bold rounded-full">● TALON ローコード</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    わずか1ヶ月で構築<br>TALON×jKanbanによる<br>ビジュアル工程管理システム
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                    ローコード開発プラットフォームTALONで、<br>
+                    カンバン方式の視覚的工程管理を短期間で実現。<br>
+                    ハンディ連携とリアルタイム進捗表示で生産性20%向上。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロジェクト概要 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-6 mb-16">
+                <!-- 業種 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">業種</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">金属加工製造業</p>
+                </div>
+
+                <!-- 規模 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">工場規模</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">20工程ライン / 作業者35名</p>
+                </div>
+
+                <!-- 開発プラットフォーム -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">開発基盤</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">TALON + jKanban + SQL Server</p>
+                </div>
+
+                <!-- 開発期間 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900">開発期間</h3>
+                    </div>
+                    <p class="text-gray-700 text-sm">1ヶ月（超短期開発）</p>
+                </div>
+            </div>
+
+            <!-- 導入効果 -->
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 md:p-12 border-2 border-purple-100">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">導入効果</h2>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">20%</div>
+                        <p class="text-gray-700 font-semibold text-sm">生産性向上</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">35%</div>
+                        <p class="text-gray-700 font-semibold text-sm">リードタイム短縮</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">90%</div>
+                        <p class="text-gray-700 font-semibold text-sm">納期遵守率向上</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">100%</div>
+                        <p class="text-gray-700 font-semibold text-sm">進捗の見える化</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">75%</div>
+                        <p class="text-gray-700 font-semibold text-sm">改善提案反映スピード</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技術スタック -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">技術スタック</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                TALONローコードプラットフォームとjKanbanライブラリを組み合わせた、視覚的で使いやすいシステム構成
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- TALONプラットフォーム -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">TALON基盤</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>Platform:</strong> TALON 7.x</li>
+                        <li>• <strong>開発方式:</strong> ローコード開発</li>
+                        <li>• <strong>認証:</strong> TALON標準認証</li>
+                        <li>• <strong>帳票:</strong> TALON帳票エンジン</li>
+                    </ul>
+                </div>
+
+                <!-- フロントエンド -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">カンバンUI</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>Library:</strong> jKanban.js</li>
+                        <li>• <strong>言語:</strong> JavaScript (ES6)</li>
+                        <li>• <strong>CSS:</strong> Bootstrap 4 + Custom</li>
+                        <li>• <strong>操作:</strong> ドラッグ&ドロップ対応</li>
+                    </ul>
+                </div>
+
+                <!-- データベース -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-emerald-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">データベース</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>RDBMS:</strong> SQL Server 2019</li>
+                        <li>• <strong>Edition:</strong> Standard Edition</li>
+                        <li>• <strong>テーブル数:</strong> 約25テーブル</li>
+                        <li>• <strong>接続:</strong> TALON標準コネクタ</li>
+                    </ul>
+                </div>
+
+                <!-- ハンディ連携 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">ハンディ連携</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>端末:</strong> 産業用ハンディターミナル</li>
+                        <li>• <strong>通信:</strong> Wi-Fi経由リアルタイム</li>
+                        <li>• <strong>読取:</strong> バーコード/QRコード</li>
+                        <li>• <strong>API:</strong> REST API連携</li>
+                    </ul>
+                </div>
+
+                <!-- サーバ環境 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-cyan-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">サーバ環境</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>OS:</strong> Windows Server 2019</li>
+                        <li>• <strong>Web:</strong> IIS 10.0</li>
+                        <li>• <strong>構成:</strong> オンプレミス</li>
+                        <li>• <strong>表示:</strong> 大型モニター (55インチ)</li>
+                    </ul>
+                </div>
+
+                <!-- システム規模 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-pink-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2 a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">システム規模</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>画面数:</strong> 約15画面</li>
+                        <li>• <strong>工程数:</strong> 20工程管理</li>
+                        <li>• <strong>カード数:</strong> 常時200〜300件</li>
+                        <li>• <strong>グループ:</strong> 5製造グループ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課題と解決策 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">課題と解決策</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- 課題 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">導入前の課題</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">工程進捗の不透明さ</h4>
+                                <p class="text-gray-600 text-sm">20工程ラインの進捗状況が見えず、どこにボトルネックがあるか把握困難。現場巡回で確認するしかなく、リアルタイムな対応ができない</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">製造グループへの作業割り振りの非効率</h4>
+                                <p class="text-gray-600 text-sm">5つの製造グループへの作業割り振りを手作業で管理。負荷の偏りが発生し、一部グループは待機時間が多く、一部は残業続き</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">多能工の活用ができない</h4>
+                                <p class="text-gray-600 text-sm">複数工程をこなせる多能工作業者がいても、どの工程が空いているか分からず、スキルを活かせない。人員配置の最適化が困難</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">紙の工程カードによる進捗管理</h4>
+                                <p class="text-gray-600 text-sm">工程完了の都度、紙カードに手書き記入。事務所でのデータ入力に時間がかかり、リアルタイム把握が不可能。転記ミスも多発</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-red-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">システム構築の長期化懸念</h4>
+                                <p class="text-gray-600 text-sm">従来のスクラッチ開発では半年以上かかる見込み。その間も現場の要望は変化し続け、完成時には陳腐化する恐れ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 解決策 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border-2 border-purple-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">TALONローコードで実現</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">jKanbanでビジュアル進捗管理</h4>
+                                <p class="text-gray-600 text-sm">工程ごとのカンバンボードで全作業を可視化。ドラッグ&ドロップで直感的に操作。大型モニター表示で現場全員が一目で状況把握</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">自動負荷分散アルゴリズム</h4>
+                                <p class="text-gray-600 text-sm">5製造グループの稼働状況を自動判定し、最適な割り振りを提案。負荷の偏りが35%減少し、全体の生産性が20%向上</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">スキルマトリクス連携</h4>
+                                <p class="text-gray-600 text-sm">作業者ごとの対応可能工程をDB管理。空き工程が発生すると、対応可能な多能工を自動表示。人員配置が最適化され、待機時間が半減</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">ハンディ連携でリアルタイム更新</h4>
+                                <p class="text-gray-600 text-sm">工程カードのバーコードをハンディで読み取り、即座にカンバンボードに反映。紙への転記作業が不要になり、進捗把握が100%リアルタイム化</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-purple-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">1ヶ月で本稼働 + 柔軟な改善対応</h4>
+                                <p class="text-gray-600 text-sm">TALONローコードで開発期間を1ヶ月に短縮。稼働後の改善要望も数日で反映可能。現場の声を即座に取り入れ、75%高速で進化</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- システム機能詳細 -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">システム機能詳細</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                カンバン方式による視覚的管理と、ハンディ連携によるリアルタイム進捗把握を実現
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 機能1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">カンバンボード</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 工程別カード一覧表示</li>
+                        <li>• ドラッグ&ドロップ移動</li>
+                        <li>• 色分け表示（優先度別）</li>
+                        <li>• リアルタイム自動更新</li>
+                    </ul>
+                </div>
+
+                <!-- 機能2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">作業カード管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 作業指示書自動生成</li>
+                        <li>• バーコード/QRコード発行</li>
+                        <li>• 工程別詳細情報表示</li>
+                        <li>• 納期・優先度管理</li>
+                    </ul>
+                </div>
+
+                <!-- 機能3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">グループ割り振り</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 5製造グループ管理</li>
+                        <li>• 自動負荷分散機能</li>
+                        <li>• グループ別稼働状況</li>
+                        <li>• 最適割り振り提案</li>
+                    </ul>
+                </div>
+
+                <!-- 機能4 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">多能工管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• スキルマトリクス管理</li>
+                        <li>• 対応可能工程表示</li>
+                        <li>• 最適人員配置提案</li>
+                        <li>• スキル習熟度管理</li>
+                    </ul>
+                </div>
+
+                <!-- 機能5 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">進捗ダッシュボード</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• リアルタイム進捗率表示</li>
+                        <li>• ボトルネック自動検出</li>
+                        <li>• 納期遅延アラート</li>
+                        <li>• 生産性分析グラフ</li>
+                    </ul>
+                </div>
+
+                <!-- 機能6 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">レポート出力</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 日次生産実績レポート</li>
+                        <li>• 工程別稼働率分析</li>
+                        <li>• グループ別生産性</li>
+                        <li>• Excel/PDF出力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TALONの強み -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">TALONローコード開発の強み</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 強み1 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg border-2 border-purple-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">超高速開発</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        従来のスクラッチ開発なら6ヶ月かかるシステムを、TALONなら<strong class="text-purple-600">1ヶ月で構築</strong>。画面設計からDB設計、ロジック実装まで、すべてをローコードで実現。
+                    </p>
+                    <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                        <p class="text-sm text-gray-600"><strong>実績:</strong> 本案件では要件定義1週間、開発2週間、テスト1週間の計1ヶ月で本稼働を実現</p>
+                    </div>
+                </div>
+
+                <!-- 強み2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border-2 border-blue-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">大幅コスト削減</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        開発期間の短縮により、<strong class="text-blue-600">開発コストを従来の1/3に削減</strong>。保守・改修も容易で、ランニングコストも大幅に抑制可能。
+                    </p>
+                    <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                        <p class="text-sm text-gray-600"><strong>実績:</strong> スクラッチ開発見積600万円に対し、TALON開発は200万円で実現</p>
+                    </div>
+                </div>
+
+                <!-- 強み3 -->
+                <div class="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-8 shadow-lg border-2 border-emerald-100">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">柔軟な改善対応</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        現場の要望に応じた機能追加・変更を<strong class="text-emerald-600">数日で反映</strong>。稼働後も継続的に進化させられるアジャイルな開発が可能。
+                    </p>
+                    <div class="bg-white rounded-lg p-4 border-l-4 border-emerald-500">
+                        <p class="text-sm text-gray-600"><strong>実績:</strong> 稼働後3ヶ月で12件の改善要望を実装。平均2日で対応完了</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開発プロセス -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">開発プロセス（1ヶ月）</h2>
+
+            <div class="max-w-5xl mx-auto">
+                <!-- Week 1 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-purple-100 text-purple-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Week 1</div>
+                            <div class="text-xs mt-1">要件定義</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">現場ヒアリング・要件定義</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• 製造現場での業務観察（2日間）</li>
+                            <li>• 5製造グループの作業フロー調査</li>
+                            <li>• 多能工のスキル一覧作成</li>
+                            <li>• jKanbanライブラリの適用可否検証</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-blue-100 text-blue-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Week 2</div>
+                            <div class="text-xs mt-1">開発（前半）</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">TALON基盤構築・基本機能開発</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• TALONプロジェクト作成・DB接続設定</li>
+                            <li>• マスタデータ設計（工程・作業者・スキル）</li>
+                            <li>• jKanbanライブラリ組み込み・カンバンボード実装</li>
+                            <li>• ドラッグ&ドロップ機能の実装</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="mb-8 flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-emerald-100 text-emerald-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Week 3</div>
+                            <div class="text-xs mt-1">開発（後半）</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">高度機能・ハンディ連携実装</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• 自動負荷分散アルゴリズム実装</li>
+                            <li>• 多能工自動アサイン機能</li>
+                            <li>• ハンディターミナルAPI連携</li>
+                            <li>• リアルタイム更新機能（WebSocket）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-32 mr-6">
+                        <div class="bg-orange-100 text-orange-700 font-bold py-2 px-4 rounded-lg text-center">
+                            <div class="text-2xl">Week 4</div>
+                            <div class="text-xs mt-1">テスト・稼働</div>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">テスト・教育・本稼働</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• 現場での実地テスト（実データ100件投入）</li>
+                            <li>• 作業者向け操作研修（ハンディ実機トレーニング）</li>
+                            <li>• 大型モニター設置・表示調整</li>
+                            <li>• 本稼働開始・初期サポート（1週間）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">お客様の声</h2>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 md:p-12 border-2 border-purple-100 shadow-lg">
+                <div class="flex items-start mb-6">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+                            「20工程ラインの進捗管理が、これまで本当に大変でした。現場を巡回しても全体像が掴めず、どこにボトルネックがあるのか分からない。製造グループへの割り振りも経験と勘頼みで、負荷の偏りが常に問題でした。<br><br>
+                            
+                            新しいカンバンシステムは、まさに目から鱗でした。大型モニターに全工程の状況が一目瞭然。どの工程にどれだけ作業が溜まっているか、どのグループが空いているか、瞬時に分かります。<br><br>
+                            
+                            驚いたのは開発スピードです。従来のシステム開発なら半年以上かかると思っていましたが、TALONを使って1ヶ月で本稼働できました。しかも、稼働後に現場から出た改善要望も、数日で反映してくれます。<br><br>
+                            
+                            ハンディターミナルで工程カードを読み取ると、すぐにカンバンボードに反映される仕組みも素晴らしいです。紙への記入作業がなくなり、リアルタイムで進捗が把握できるようになりました。<br><br>
+                            
+                            多能工の活用も進みました。システムが自動的に対応可能な作業者を表示してくれるので、スキルを最大限に活かせています。生産性が20%向上し、リードタイムも35%短縮できました。<br><br>
+                            
+                            カイタックジャパンさんは、現場の声を本当に大切にしてくれました。私たちの要望を柔軟に取り入れ、使いやすいシステムに仕上げてくれたことに感謝しています。」
+                        </p>
+                        <div class="border-t-2 border-purple-200 pt-4">
+                            <p class="font-bold text-gray-900">工場長 様</p>
+                            <p class="text-gray-600">金属加工製造業（20工程ライン・作業者35名）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-br from-purple-600 to-purple-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                TALONローコード開発で、<br>あなたの現場も変革しませんか？
+            </h2>
+            <p class="text-purple-100 text-lg mb-8 leading-relaxed">
+                工程管理、在庫管理、品質管理など、<br>
+                製造現場のあらゆる課題をTALONで短期間・低コストで解決します。<br>
+                まずはお気軽にご相談ください。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-bold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    お問い合わせ
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="../services/lowcode.html" class="inline-flex items-center justify-center px-8 py-4 bg-purple-700 text-white font-bold rounded-lg hover:bg-purple-900 transition-all duration-300 border-2 border-white">
+                    TALONローコード開発について
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 関連事例 -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">その他の事例</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 事例1 -->
+                <a href="case1.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">製造業</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-2">製造業</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">生産管理システム全面刷新</h3>
+                        <p class="text-gray-600 text-sm">業務効率30%向上を実現</p>
+                    </div>
+                </a>
+
+                <!-- 事例2 -->
+                <a href="case2.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">建設業</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-600 text-sm font-semibold rounded-full mb-2">建設業</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">電気工事会社統合基幹システム</h3>
+                        <p class="text-gray-600 text-sm">業務時間40%削減</p>
+                    </div>
+                </a>
+
+                <!-- 事例3 -->
+                <a href="case3.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">小売業</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-sm font-semibold rounded-full mb-2">小売業（移動販売）</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">移動販売iPad POSシステム</h3>
+                        <p class="text-gray-600 text-sm">レジ締め時間70%削減</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/common.js"></script>
+</body>
+</html>
