@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ml/
+
+Sitemap: https://www.khaithac-jp.com/sitemap.xml

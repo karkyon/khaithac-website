@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- トップページ -->
+  <url>
+    <loc>https://www.khaithac-jp.com/</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- サービス一覧 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/services/</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- サービスページ - ACCESS開発 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/services/access.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- サービスページ - ローコード開発 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/services/lowcode.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- サービスページ - スクラッチ開発 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/services/scratch.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- サービスページ - Web・モバイルアプリ開発 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/services/webapp.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- 開発実績一覧 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 1 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case1.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 2 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case2.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 3 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case3.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 4 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case4.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 5 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case5.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 事例ページ - Case 6 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/works/case6.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- 会社案内 -->
+  <url>
+    <loc>https://www.khaithac-jp.com/company.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- お問い合わせ -->
+  <url>
+    <loc>https://www.khaithac-jp.com/contact.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- プライバシーポリシー -->
+  <url>
+    <loc>https://www.khaithac-jp.com/privacy-policy.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
