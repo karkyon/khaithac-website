@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <title>TALONローコード開発 | カイタックジャパン</title>
-    <meta name="description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.khaithac-jp.com/services/lowcode.html">
-    <meta property="og:title" content="TALONローコード開発 | カイタックジャパン">
-    <meta property="og:description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
-    <meta property="og:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="カイタックジャパン">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.khaithac-jp.com/services/lowcode.html">
-    <meta name="twitter:title" content="TALONローコード開発 | カイタックジャパン">
-    <meta name="twitter:description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
-    <meta name="twitter:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
 
+  <!-- SEO Meta Tags -->
+  <title>TALONローコード開発 | カイタックジャパン</title>
+  <meta name="description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
   
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.khaithac-jp.com/services/lowcode.html">
+  <meta property="og:title" content="TALONローコード開発 | カイタックジャパン">
+  <meta property="og:description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
+  <meta property="og:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="カイタックジャパン">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.khaithac-jp.com/services/lowcode.html">
+  <meta name="twitter:title" content="TALONローコード開発 | カイタックジャパン">
+  <meta name="twitter:description" content="開発期間70%短縮、低コストで業務アプリを構築。コードレスで誰でも使える次世代のローコードプラットフォーム。">
+  <meta name="twitter:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
+
   <meta name="keywords" content="TALON,ローコード,低コード開発,超高速開発,業務システム,カイタックジャパン">
-  
   
   <!-- ファビコン -->
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
@@ -107,13 +106,21 @@
   
   <style>
     html { scroll-behavior: smooth; }
+
     /* HEROセクション背景画像スタイル */
     .hero-background {
+      /* フォールバック用の元の画像 */
       background-image: linear-gradient(rgba(26,26,26, 0.4), rgba(26,26,26, 0.2)), url('../assets/images/hero/talon_hero_bg.jpg');
+      /* WebP対応（image-set） */
+      background-image: linear-gradient(rgba(26,26,26, 0.4), rgba(26,26,26, 0.2)), image-set(
+        url('../assets/images/hero/talon_hero_bg.webp') type('image/webp'),
+        url('../assets/images/hero/talon_hero_bg.jpg') type('image/jpeg')
+      );
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
+
     /* CTAセクション透かしロゴスタイル */
     .cta-watermark {
       position: relative;
