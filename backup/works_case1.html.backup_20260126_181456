@@ -3,30 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <title>システム開発事例3 | お客様事例 | カイタックジャパン</title>
-    <meta name="description" content="カイタックジャパンのシステム開発事例をご紹介します。">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.khaithac-jp.com/works/case3.html">
-    <meta property="og:title" content="システム開発事例3 | お客様事例 | カイタックジャパン">
-    <meta property="og:description" content="カイタックジャパンのシステム開発事例をご紹介します。">
-    <meta property="og:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="カイタックジャパン">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.khaithac-jp.com/works/case3.html">
-    <meta name="twitter:title" content="システム開発事例3 | お客様事例 | カイタックジャパン">
-    <meta name="twitter:description" content="カイタックジャパンのシステム開発事例をご紹介します。">
-    <meta name="twitter:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-
-    
-    
+    <meta name="description" content="ウレタン・樹脂加工製造業向け統合基幹システム開発事例 - カイタックジャパン">
+    <title>製造業向け統合基幹システム | 開発事例 | カイタックジャパン</title>
 
     <!-- ファビコン -->
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
@@ -37,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEEPVEXTLX"></script>
     <script>
@@ -113,7 +91,7 @@
     <div id="header-placeholder"></div>
 
     <!-- ヒーローセクション -->
-    <section class="relative bg-gradient-to-br from-orange-600 to-orange-800 py-20 md:py-32">
+    <section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-32">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptLTIwIDIwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] bg-repeat"></div>
         </div>
@@ -130,15 +108,15 @@
             
             <div class="max-w-5xl">
                 <div class="mb-6">
-                    <span class="inline-block px-4 py-2 bg-orange-100 text-orange-800 text-sm font-bold rounded-full">● 小売業（移動販売）</span>
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-bold rounded-full">● 製造業</span>
                 </div>
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    近畿圏20店舗を統合管理<br>iPad対応POSレジ＋<br>リアルタイム売上管理システム
+                    老朽化Access基幹システムを<br>最新.NET技術で全面刷新<br>業務効率30%向上を実現
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
-                    3〜4ヶ月周期で移動する販売店舗の売上・在庫を<br>
-                    iPad POSとクラウドシステムで一元管理。<br>
-                    本部からリアルタイムで全店舗の状況を把握可能に。
+                    15年使い続けたAccess製造管理システムの限界を打破。<br>
+                    ASP.NET Core + Vue.jsで構築した統合基幹システムにより、<br>
+                    リアルタイム在庫管理と生産進捗の可視化を実現しました。
                 </p>
             </div>
         </div>
@@ -151,28 +129,27 @@
                 <!-- 業種 -->
                 <div class="bg-gray-50 rounded-xl p-6">
                     <div class="flex items-center mb-3">
-                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
-                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                             </svg>
                         </div>
                         <h3 class="text-sm font-bold text-gray-900">業種</h3>
                     </div>
-                    <p class="text-gray-700 text-sm">小売業（移動販売事業）</p>
+                    <p class="text-gray-700 text-sm">ウレタン・樹脂加工製造業</p>
                 </div>
 
                 <!-- 規模 -->
                 <div class="bg-gray-50 rounded-xl p-6">
                     <div class="flex items-center mb-3">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
                         </div>
-                        <h3 class="text-sm font-bold text-gray-900">展開規模</h3>
+                        <h3 class="text-sm font-bold text-gray-900">企業規模</h3>
                     </div>
-                    <p class="text-gray-700 text-sm">近畿圏20店舗（移動販売）</p>
+                    <p class="text-gray-700 text-sm">従業員50名 / 年商15億円</p>
                 </div>
 
                 <!-- ユーザー数 -->
@@ -180,51 +157,51 @@
                     <div class="flex items-center mb-3">
                         <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <h3 class="text-sm font-bold text-gray-900">システム構成</h3>
+                        <h3 class="text-sm font-bold text-gray-900">システム規模</h3>
                     </div>
-                    <p class="text-gray-700 text-sm">iPad 20台 + 本部管理画面</p>
+                    <p class="text-gray-700 text-sm">50ユーザー / 12モジュール</p>
                 </div>
 
                 <!-- 開発期間 -->
                 <div class="bg-gray-50 rounded-xl p-6">
                     <div class="flex items-center mb-3">
-                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
-                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
                         <h3 class="text-sm font-bold text-gray-900">開発期間</h3>
                     </div>
-                    <p class="text-gray-700 text-sm">5ヶ月（iPad+クラウド）</p>
+                    <p class="text-gray-700 text-sm">10ヶ月（段階リリース）</p>
                 </div>
             </div>
 
             <!-- 導入効果 -->
-            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 md:p-12 border-2 border-orange-100">
+            <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 md:p-12 border-2 border-blue-100">
                 <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">導入効果</h2>
                 <div class="grid md:grid-cols-5 gap-6">
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-orange-600 mb-2">70%</div>
-                        <p class="text-gray-700 font-semibold text-sm">レジ締め時間削減</p>
+                        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">30%</div>
+                        <p class="text-gray-700 font-semibold text-sm">業務時間削減</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">100%</div>
-                        <p class="text-gray-700 font-semibold text-sm">リアルタイム売上把握</p>
+                        <div class="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">98%</div>
+                        <p class="text-gray-700 font-semibold text-sm">在庫精度向上</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-emerald-600 mb-2">85%</div>
-                        <p class="text-gray-700 font-semibold text-sm">在庫管理精度向上</p>
+                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">50%</div>
+                        <p class="text-gray-700 font-semibold text-sm">棚卸時間短縮</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0件</div>
-                        <p class="text-gray-700 font-semibold text-sm">レジ金誤差</p>
+                        <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">0件</div>
+                        <p class="text-gray-700 font-semibold text-sm">出荷ミス削減</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">50%</div>
-                        <p class="text-gray-700 font-semibold text-sm">日報作成時間削減</p>
+                        <div class="text-4xl md:text-5xl font-bold text-cyan-600 mb-2">15%</div>
+                        <p class="text-gray-700 font-semibold text-sm">原価管理精度向上</p>
                     </div>
                 </div>
             </div>
@@ -236,28 +213,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">技術スタック</h2>
             <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-                オフライン対応とリアルタイム同期を両立した、移動販売に最適化されたシステムアーキテクチャ
+                最新の.NET技術とモダンなフロントエンドフレームワークで、スケーラブルで保守性の高いシステムを構築
             </p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- iPad アプリ -->
-                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900">iPad アプリ</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>言語:</strong> Objective-C</li>
-                        <li>• <strong>iOS:</strong> iOS 9.0〜12.0対応</li>
-                        <li>• <strong>DB:</strong> Core Data (ローカル)</li>
-                        <li>• <strong>通信:</strong> AFNetworking 3.x</li>
-                    </ul>
-                </div>
-
                 <!-- バックエンド -->
                 <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
                     <div class="flex items-center mb-4">
@@ -269,10 +228,28 @@
                         <h3 class="text-lg font-bold text-gray-900">バックエンド</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>言語:</strong> PHP 7.2</li>
-                        <li>• <strong>FW:</strong> Laravel 5.7</li>
-                        <li>• <strong>API:</strong> RESTful JSON API</li>
-                        <li>• <strong>認証:</strong> JWT (JSON Web Token)</li>
+                        <li>• <strong>言語:</strong> C# 10.0</li>
+                        <li>• <strong>FW:</strong> ASP.NET Core 6.0 MVC</li>
+                        <li>• <strong>ORM:</strong> Entity Framework Core 6.0</li>
+                        <li>• <strong>API:</strong> RESTful Web API</li>
+                    </ul>
+                </div>
+
+                <!-- フロントエンド -->
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-emerald-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">フロントエンド</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>• <strong>FW:</strong> Vue.js 3 (Composition API)</li>
+                        <li>• <strong>言語:</strong> TypeScript 4.5</li>
+                        <li>• <strong>CSS:</strong> Bootstrap 5 + SCSS</li>
+                        <li>• <strong>Charts:</strong> Chart.js 3</li>
                     </ul>
                 </div>
 
@@ -287,46 +264,46 @@
                         <h3 class="text-lg font-bold text-gray-900">データベース</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>RDBMS:</strong> MySQL 5.7</li>
-                        <li>• <strong>テーブル数:</strong> 約35テーブル</li>
-                        <li>• <strong>マスタ:</strong> 商品・店舗・売上データ</li>
-                        <li>• <strong>バックアップ:</strong> 日次自動</li>
+                        <li>• <strong>RDBMS:</strong> SQL Server 2019</li>
+                        <li>• <strong>Edition:</strong> Enterprise Edition</li>
+                        <li>• <strong>テーブル数:</strong> 約180テーブル</li>
+                        <li>• <strong>ストアド:</strong> 約120プロシージャ</li>
                     </ul>
                 </div>
 
                 <!-- サーバ環境 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-emerald-500">
+                <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
                             </svg>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900">サーバ環境</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>Cloud:</strong> AWS EC2 (t2.medium)</li>
-                        <li>• <strong>OS:</strong> Amazon Linux 2</li>
-                        <li>• <strong>Web:</strong> Apache 2.4 + PHP-FPM</li>
-                        <li>• <strong>SSL:</strong> Let's Encrypt (無料SSL)</li>
+                        <li>• <strong>OS:</strong> Windows Server 2019</li>
+                        <li>• <strong>Web:</strong> IIS 10.0</li>
+                        <li>• <strong>構成:</strong> オンプレミス冗長化</li>
+                        <li>• <strong>バックアップ:</strong> 週次フル+日次差分</li>
                     </ul>
                 </div>
 
-                <!-- 管理画面 -->
+                <!-- 開発ツール -->
                 <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-cyan-500">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-900">本部管理画面</h3>
+                        <h3 class="text-lg font-bold text-gray-900">開発ツール</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>FW:</strong> Laravel Blade テンプレート</li>
-                        <li>• <strong>CSS:</strong> Bootstrap 4</li>
-                        <li>• <strong>Chart:</strong> Chart.js</li>
-                        <li>• <strong>Export:</strong> Excel/CSV出力</li>
+                        <li>• <strong>IDE:</strong> Visual Studio 2022</li>
+                        <li>• <strong>VCS:</strong> Git + Azure DevOps</li>
+                        <li>• <strong>Build:</strong> Azure Pipelines</li>
+                        <li>• <strong>Test:</strong> xUnit, Selenium</li>
                     </ul>
                 </div>
 
@@ -341,10 +318,10 @@
                         <h3 class="text-lg font-bold text-gray-900">システム規模</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li>• <strong>iPad画面:</strong> 約25画面</li>
-                        <li>• <strong>管理画面:</strong> 約40画面</li>
-                        <li>• <strong>コード量:</strong> 約6万行</li>
-                        <li>• <strong>API数:</strong> 約45エンドポイント</li>
+                        <li>• <strong>画面数:</strong> 約850画面</li>
+                        <li>• <strong>コード量:</strong> 約15万行</li>
+                        <li>• <strong>モジュール:</strong> 12モジュール</li>
+                        <li>• <strong>帳票:</strong> 約200種類</li>
                     </ul>
                 </div>
             </div>
@@ -374,8 +351,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">手書き伝票とレジ締めの煩雑さ</h4>
-                                <p class="text-gray-600 text-sm">移動販売20店舗すべてで手書き伝票。レジ締め作業に1店舗あたり30分〜1時間かかり、営業終了後の残業が常態化。計算ミスも頻発</p>
+                                <h4 class="font-bold text-gray-900 mb-1">15年前のAccess 2003システムの限界</h4>
+                                <p class="text-gray-600 text-sm">動作が重く、同時アクセスでフリーズ頻発。保守できる人材も退職し、改修が困難に</p>
                             </div>
                         </div>
                         
@@ -384,8 +361,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">売上データの集計遅延</h4>
-                                <p class="text-gray-600 text-sm">各店舗が翌日朝にFAXまたはメールで売上報告。本部での集計に半日以上かかり、リアルタイムな経営判断が不可能</p>
+                                <h4 class="font-bold text-gray-900 mb-1">リアルタイム在庫把握の不可能</h4>
+                                <p class="text-gray-600 text-sm">各工程での在庫消費がタイムリーに反映されず、在庫精度は60%程度。欠品・過剰在庫が常態化</p>
                             </div>
                         </div>
                         
@@ -394,8 +371,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">在庫管理の不透明さ</h4>
-                                <p class="text-gray-600 text-sm">各店舗の在庫状況を本部が把握できず、配送計画が非効率。欠品・過剰在庫が頻発し、機会損失が発生</p>
+                                <h4 class="font-bold text-gray-900 mb-1">生産進捗の見える化不足</h4>
+                                <p class="text-gray-600 text-sm">各工程の進捗状況が不透明で、納期遅延に気づくのが遅れる。顧客への納期回答も曖昧に</p>
                             </div>
                         </div>
                         
@@ -404,8 +381,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">移動販売特有の通信環境問題</h4>
-                                <p class="text-gray-600 text-sm">出店場所により通信が不安定。オンライン専用のレジシステムは使えず、オフライン対応が必須要件</p>
+                                <h4 class="font-bold text-gray-900 mb-1">原価管理の属人化</h4>
+                                <p class="text-gray-600 text-sm">実際原価の集計に2週間かかり、正確な利益把握が困難。見積精度も低く、赤字案件が発生</p>
                             </div>
                         </div>
 
@@ -414,72 +391,72 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">スタッフの操作スキル差</h4>
-                                <p class="text-gray-600 text-sm">アルバイトスタッフが多く、複雑なシステムは使いこなせない。直感的でシンプルな操作性が必須</p>
+                                <h4 class="font-bold text-gray-900 mb-1">モバイル対応の欠如</h4>
+                                <p class="text-gray-600 text-sm">現場からのデータ入力は全て事務所PCのみ。二重入力と入力ミスが多発</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 解決策 -->
-                <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border-2 border-orange-200">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border-2 border-blue-200">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">iPad POSシステムで実現</h3>
+                        <h3 class="text-2xl font-bold text-gray-900">.NET技術で実現した解決</h3>
                     </div>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">直感的なiPad POSレジ</h4>
-                                <p class="text-gray-600 text-sm">商品をタップするだけの簡単操作。バーコードスキャナー連携で入力ミスゼロ。レジ締めは自動計算で5分以内に完了。70%時間削減を実現</p>
+                                <h4 class="font-bold text-gray-900 mb-1">ASP.NET Core + Vue.jsで高速Web化</h4>
+                                <p class="text-gray-600 text-sm">レスポンス時間0.3秒以内を実現。50ユーザー同時アクセスでも快適動作。SPA構成で画面遷移も高速化</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">リアルタイム売上可視化</h4>
-                                <p class="text-gray-600 text-sm">売上データを即座にクラウド同期。本部管理画面で全20店舗の売上をリアルタイム表示。時間別・商品別の分析も可能に</p>
+                                <h4 class="font-bold text-gray-900 mb-1">リアルタイム在庫管理システム</h4>
+                                <p class="text-gray-600 text-sm">工程ごとの入出庫を即時反映。在庫精度98%を達成。ロット管理・有効期限管理も実装し、トレーサビリティを確保</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">クラウド在庫管理システム</h4>
-                                <p class="text-gray-600 text-sm">販売と同時に在庫を自動減算。本部から各店舗の在庫をリアルタイム確認。配送計画の最適化で欠品85%削減</p>
+                                <h4 class="font-bold text-gray-900 mb-1">生産進捗ダッシュボード</h4>
+                                <p class="text-gray-600 text-sm">各案件の工程別進捗をガントチャート表示。遅延案件を赤色でアラート。タブレットで現場からも確認可能</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">オフライン動作 + 自動同期</h4>
-                                <p class="text-gray-600 text-sm">Core Data でローカルDB保存。通信不可でも販売継続可能。Wi-Fi接続時に自動同期し、データ欠損ゼロを実現</p>
+                                <h4 class="font-bold text-gray-900 mb-1">自動原価計算エンジン</h4>
+                                <p class="text-gray-600 text-sm">材料費・労務費・製造間接費を自動集計。リアルタイムで案件別損益を算出。見積精度が飛躍的に向上</p>
                             </div>
                         </div>
 
                         <div class="flex items-start">
-                            <svg class="w-6 h-6 text-orange-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <div>
-                                <h4 class="font-bold text-gray-900 mb-1">シンプルUI + 充実した研修</h4>
-                                <p class="text-gray-600 text-sm">大きなボタンと明確な配色で誰でも使える設計。動画マニュアル完備。新人スタッフでも30分で習得可能</p>
+                                <h4 class="font-bold text-gray-900 mb-1">レスポンシブ設計でモバイル対応</h4>
+                                <p class="text-gray-600 text-sm">現場からタブレット・スマホで入出庫登録。バーコード読取で入力ミスゼロを実現。二重入力作業を完全排除</p>
                             </div>
                         </div>
                     </div>
@@ -493,71 +470,71 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">システム機能詳細</h2>
             <p class="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-                移動販売に特化した、POSレジから本部管理まで完全統合されたシステム
+                販売管理から製造管理まで、製造業に必要な全機能を統合
             </p>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- 機能1 -->
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">iPad POSレジ</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">販売管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• 商品選択・会計処理</li>
-                        <li>• バーコードスキャン対応</li>
-                        <li>• 現金・カード決済対応</li>
-                        <li>• レシート発行（Bluetooth接続）</li>
+                        <li>• 見積・受注管理</li>
+                        <li>• 売上計上・請求書発行</li>
+                        <li>• 入金管理・消込</li>
+                        <li>• 売掛金管理</li>
                     </ul>
                 </div>
 
                 <!-- 機能2 -->
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">レジ締め処理</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">仕入管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• 自動売上集計</li>
-                        <li>• 現金残高確認</li>
-                        <li>• 売上日報自動生成</li>
-                        <li>• クラウド自動送信</li>
+                        <li>• 発注管理・発注書発行</li>
+                        <li>• 入荷検収・検品</li>
+                        <li>• 支払管理・買掛金</li>
+                        <li>• 仕入先マスタ</li>
                     </ul>
                 </div>
 
                 <!-- 機能3 -->
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                         </svg>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-3">在庫管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• リアルタイム在庫表示</li>
-                        <li>• 販売時自動減算</li>
-                        <li>• 入荷・補充登録</li>
-                        <li>• 在庫アラート機能</li>
+                        <li>• リアルタイム在庫管理</li>
+                        <li>• ロット管理・有効期限</li>
+                        <li>• 入出庫履歴・棚卸</li>
+                        <li>• 在庫分析・適正在庫</li>
                     </ul>
                 </div>
 
                 <!-- 機能4 -->
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">売上分析（本部）</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">製造管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• リアルタイム売上ダッシュボード</li>
-                        <li>• 店舗別・商品別分析</li>
-                        <li>• 時間帯別売上グラフ</li>
-                        <li>• 前年同期比較</li>
+                        <li>• 生産計画・作業指示</li>
+                        <li>• 工程別進捗管理</li>
+                        <li>• 実績収集・分析</li>
+                        <li>• 製造BOM管理</li>
                     </ul>
                 </div>
 
@@ -565,16 +542,15 @@
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
                     <div class="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">店舗管理</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">原価管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• 出店スケジュール管理</li>
-                        <li>• 店舗別売上目標設定</li>
-                        <li>• スタッフ配置管理</li>
-                        <li>• 稼働状況一覧</li>
+                        <li>• 標準原価設定</li>
+                        <li>• 実際原価自動集計</li>
+                        <li>• 案件別損益分析</li>
+                        <li>• 原価差異分析</li>
                     </ul>
                 </div>
 
@@ -585,12 +561,44 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">レポート出力</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">品質管理</h3>
                     <ul class="space-y-1.5 text-sm text-gray-600">
-                        <li>• 日次・月次売上レポート</li>
-                        <li>• 商品別販売実績</li>
-                        <li>• Excel/CSV出力</li>
-                        <li>• 印刷機能</li>
+                        <li>• 検査記録管理</li>
+                        <li>• 不良品管理・分析</li>
+                        <li>• 是正処置管理</li>
+                        <li>• 品質レポート出力</li>
+                    </ul>
+                </div>
+
+                <!-- 機能7 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">分析・BI</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 売上分析ダッシュボード</li>
+                        <li>• 在庫回転率分析</li>
+                        <li>• 生産効率分析</li>
+                        <li>• 経営指標レポート</li>
+                    </ul>
+                </div>
+
+                <!-- 機能8 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">マスタ管理</h3>
+                    <ul class="space-y-1.5 text-sm text-gray-600">
+                        <li>• 商品・製品マスタ</li>
+                        <li>• 取引先マスタ</li>
+                        <li>• ユーザー・権限管理</li>
+                        <li>• 各種コードマスタ</li>
                     </ul>
                 </div>
             </div>
@@ -606,17 +614,17 @@
                 <!-- フェーズ1 -->
                 <div class="mb-8 flex items-start">
                     <div class="flex-shrink-0 w-32 mr-6">
-                        <div class="bg-orange-100 text-orange-700 font-bold py-2 px-4 rounded-lg text-center">
+                        <div class="bg-blue-100 text-blue-700 font-bold py-2 px-4 rounded-lg text-center">
                             <div class="text-2xl">Phase 1</div>
-                            <div class="text-xs mt-1">1ヶ月</div>
+                            <div class="text-xs mt-1">2ヶ月</div>
                         </div>
                     </div>
                     <div class="flex-1 bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">要件定義・現場調査</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">要件定義・現行業務分析</h3>
                         <ul class="space-y-2 text-gray-700">
-                            <li>• 実際の移動販売店舗に同行し、業務フローを詳細調査</li>
-                            <li>• 通信環境の実測（LTE電波強度・Wi-Fi利用可否）</li>
-                            <li>• スタッフヒアリング（10名）でUI要件を洗い出し</li>
+                            <li>• 全50名へのヒアリング実施。現場作業者の声を重視</li>
+                            <li>• 既存Access DBを詳細分析し、データ移行計画を策定</li>
+                            <li>• 段階的リリース計画策定（販売→在庫→製造の順）</li>
                         </ul>
                     </div>
                 </div>
@@ -624,17 +632,17 @@
                 <!-- フェーズ2 -->
                 <div class="mb-8 flex items-start">
                     <div class="flex-shrink-0 w-32 mr-6">
-                        <div class="bg-blue-100 text-blue-700 font-bold py-2 px-4 rounded-lg text-center">
+                        <div class="bg-emerald-100 text-emerald-700 font-bold py-2 px-4 rounded-lg text-center">
                             <div class="text-2xl">Phase 2</div>
-                            <div class="text-xs mt-1">1.5ヶ月</div>
+                            <div class="text-xs mt-1">2ヶ月</div>
                         </div>
                     </div>
                     <div class="flex-1 bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">設計・プロトタイプ作成</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">基本設計・DB設計</h3>
                         <ul class="space-y-2 text-gray-700">
-                            <li>• オフライン動作を前提としたDB設計（Core Data + MySQL）</li>
-                            <li>• UI/UXプロトタイプを実機で検証（iPad Air実機）</li>
-                            <li>• AWS環境構築（EC2 + RDS + S3）</li>
+                            <li>• ER図作成（180テーブル構成）、正規化を徹底</li>
+                            <li>• 画面設計書850画面をプロトタイプで確認</li>
+                            <li>• API設計、RESTful原則に基づく統一インターフェース</li>
                         </ul>
                     </div>
                 </div>
@@ -642,17 +650,17 @@
                 <!-- フェーズ3 -->
                 <div class="mb-8 flex items-start">
                     <div class="flex-shrink-0 w-32 mr-6">
-                        <div class="bg-emerald-100 text-emerald-700 font-bold py-2 px-4 rounded-lg text-center">
+                        <div class="bg-purple-100 text-purple-700 font-bold py-2 px-4 rounded-lg text-center">
                             <div class="text-2xl">Phase 3</div>
-                            <div class="text-xs mt-1">2ヶ月</div>
+                            <div class="text-xs mt-1">4ヶ月</div>
                         </div>
                     </div>
                     <div class="flex-1 bg-gray-50 rounded-xl p-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">開発・単体テスト</h3>
                         <ul class="space-y-2 text-gray-700">
-                            <li>• iPad POSアプリ開発（Objective-C）</li>
-                            <li>• Laravel API開発（RESTful JSON API）</li>
-                            <li>• Bluetooth レシートプリンター連携実装</li>
+                            <li>• 2週間スプリントでアジャイル開発。定期デモで仕様調整</li>
+                            <li>• バーコードリーダー連携、実機で動作確認を徹底</li>
+                            <li>• 単体テストカバレッジ80%以上を達成</li>
                         </ul>
                     </div>
                 </div>
@@ -660,17 +668,17 @@
                 <!-- フェーズ4 -->
                 <div class="flex items-start">
                     <div class="flex-shrink-0 w-32 mr-6">
-                        <div class="bg-purple-100 text-purple-700 font-bold py-2 px-4 rounded-lg text-center">
+                        <div class="bg-orange-100 text-orange-700 font-bold py-2 px-4 rounded-lg text-center">
                             <div class="text-2xl">Phase 4</div>
-                            <div class="text-xs mt-1">0.5ヶ月</div>
+                            <div class="text-xs mt-1">2ヶ月</div>
                         </div>
                     </div>
                     <div class="flex-1 bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">実地テスト・本稼働</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">結合テスト・データ移行・本稼働</h3>
                         <ul class="space-y-2 text-gray-700">
-                            <li>• 2店舗でパイロット運用（通信途切れ・バッテリー持続確認）</li>
-                            <li>• スタッフ研修（動画マニュアル + 実機トレーニング）</li>
-                            <li>• 20店舗への一斉展開（iPad配布・初期設定サポート）</li>
+                            <li>• 実データ10万件の移行テスト。整合性を完全チェック</li>
+                            <li>• 操作研修を3回実施。マニュアル100ページ作成</li>
+                            <li>• 段階リリース。販売管理から先行稼働し、3ヶ月で全機能展開</li>
                         </ul>
                     </div>
                 </div>
@@ -683,28 +691,28 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">お客様の声</h2>
             
-            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 md:p-12 border-2 border-orange-100 shadow-lg">
+            <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 md:p-12 border-2 border-blue-100 shadow-lg">
                 <div class="flex items-start mb-6">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                     </div>
                     <div>
                         <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
-                            「移動販売という業態の特性上、通信環境が不安定な場所での営業も多く、オンライン専用のPOSシステムは使えませんでした。手書き伝票とExcel管理の日々で、レジ締めに毎日1時間近くかかり、スタッフの負担も大きかったです。<br><br>
+                            「15年使い続けたAccessシステムは、もはや限界でした。動作は遅く、頻繁にフリーズし、保守できる人もいない。このままでは業務が回らないと危機感を持っていました。<br><br>
                             
-                            新しいiPad POSシステムは、オフラインでも完全に動作します。販売データはローカルに保存され、Wi-Fi環境下で自動的にクラウドに同期される仕組みです。これにより、どんな場所でも安心して営業できるようになりました。<br><br>
+                            新システムは驚くほど快適です。現場からタブレットで在庫登録できるようになり、事務所との二重入力がなくなりました。在庫精度が98%まで向上し、欠品も過剰在庫も激減しました。<br><br>
                             
-                            操作も驚くほど簡単です。商品をタップするだけで会計が完了し、レジ締めはボタン一つ。アルバイトスタッフでも30分で使いこなせるようになりました。レジ金の誤差も完全にゼロになりました。<br><br>
+                            特に助かっているのが生産進捗の可視化です。以前は各工程の状況が見えず、納期遅延に気づくのが遅れていました。今はダッシュボードで一目瞭然。問題があればすぐに対応できます。<br><br>
                             
-                            本部からは、20店舗すべての売上をリアルタイムで確認できます。どの店舗がどれだけ売れているか、どの商品が人気かが一目瞭然。在庫配送の計画も効率化され、欠品が85%減少しました。<br><br>
+                            原価管理も劇的に改善しました。以前は実際原価の集計に2週間かかっていましたが、今はリアルタイムで把握できます。赤字案件が激減し、利益率が15%向上しました。
                             
-                            カイタックジャパンさんは、実際に現場に来て業務を観察してくれました。移動販売という特殊な業態を深く理解した上でシステムを作ってくれたので、本当に使いやすいものになりました。」
+                            カイタックジャパンさんは、こちらの業務を本当によく理解してくれました。現場の声を丁寧に拾い上げ、使いやすいシステムに仕上げていただき、感謝しています。」
                         </p>
-                        <div class="border-t-2 border-orange-200 pt-4">
-                            <p class="font-bold text-gray-900">代表取締役 様</p>
-                            <p class="text-gray-600">移動販売事業会社（近畿圏20店舗展開）</p>
+                        <div class="border-t-2 border-blue-200 pt-4">
+                            <p class="font-bold text-gray-900">代表取締役社長 様</p>
+                            <p class="text-gray-600">ウレタン・樹脂加工製造業（従業員50名・年商15億円）</p>
                         </div>
                     </div>
                 </div>
@@ -713,25 +721,25 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-20 bg-gradient-to-br from-orange-600 to-orange-800">
+    <section class="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                モバイルPOS・店舗管理システムをご検討中ですか？
+                同様のシステム開発をご検討中ですか？
             </h2>
-            <p class="text-orange-100 text-lg mb-8 leading-relaxed">
-                移動販売、キッチンカー、イベント出店など、<br>
-                場所を選ばないビジネスに最適なPOSシステムを開発します。<br>
-                オフライン動作対応で、どこでも安心して営業できます。
+            <p class="text-blue-100 text-lg mb-8 leading-relaxed">
+                製造業向け基幹システムの開発実績が豊富です。<br>
+                老朽化したAccessシステムの刷新、既存システムの改善など、<br>
+                お客様の課題に最適なソリューションをご提案します。
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-bold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <a href="../contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
                     お問い合わせ
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="../services/webapp.html" class="inline-flex items-center justify-center px-8 py-4 bg-orange-700 text-white font-bold rounded-lg hover:bg-orange-900 transition-all duration-300 border-2 border-white">
-                    Webアプリ開発について
+                <a href="../services/scratch.html" class="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-800 transition-all duration-300 border-2 border-white">
+                    スクラッチ開発について
                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
@@ -746,18 +754,6 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">その他の事例</h2>
             
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- 事例1 -->
-                <a href="case1.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
-                    <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                        <span class="text-white text-lg font-bold">製造業</span>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-2">製造業</span>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">生産管理システム全面刷新</h3>
-                        <p class="text-gray-600 text-sm">業務効率30%向上を実現</p>
-                    </div>
-                </a>
-
                 <!-- 事例2 -->
                 <a href="case2.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
                     <div class="aspect-video bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
@@ -765,13 +761,13 @@
                     </div>
                     <div class="p-6">
                         <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-600 text-sm font-semibold rounded-full mb-2">建設業</span>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">電気工事会社統合基幹システム</h3>
-                        <p class="text-gray-600 text-sm">業務時間40%削減</p>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">電気工事会社向け統合基幹システム</h3>
+                        <p class="text-gray-600 text-sm">業務時間40%削減を実現</p>
                     </div>
                 </a>
 
-                <!-- 事例4 - TALON -->
-                <a href="case4.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                <!-- 事例3 -->
+                <a href="case3.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
                     <div class="aspect-video bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
                         <span class="text-white text-lg font-bold">TALON</span>
                     </div>
@@ -779,6 +775,18 @@
                         <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-600 text-sm font-semibold rounded-full mb-2">ローコード開発</span>
                         <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">測定器校正記録システム</h3>
                         <p class="text-gray-600 text-sm">開発期間70%短縮</p>
+                    </div>
+                </a>
+
+                <!-- 事例4 -->
+                <a href="case4.html" class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden group">
+                    <div class="aspect-video bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <span class="text-white text-lg font-bold">TALON</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full mb-2">ローコード開発</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">カンバン方式工程管理システム</h3>
+                        <p class="text-gray-600 text-sm">生産性20%向上</p>
                     </div>
                 </a>
             </div>

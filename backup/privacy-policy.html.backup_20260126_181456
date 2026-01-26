@@ -3,31 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <title>プライバシーポリシー | カイタックジャパン</title>
-    <meta name="description" content="合同会社カイタックジャパンの個人情報保護方針・プライバシーポリシーについて。">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.khaithac-jp.com/privacy-policy.html">
-    <meta property="og:title" content="プライバシーポリシー | カイタックジャパン">
-    <meta property="og:description" content="合同会社カイタックジャパンの個人情報保護方針・プライバシーポリシーについて。">
-    <meta property="og:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="カイタックジャパン">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.khaithac-jp.com/privacy-policy.html">
-    <meta name="twitter:title" content="プライバシーポリシー | カイタックジャパン">
-    <meta name="twitter:description" content="合同会社カイタックジャパンの個人情報保護方針・プライバシーポリシーについて。">
-    <meta name="twitter:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-
-  
+  <meta name="description" content="合同会社カイタックジャパンのプライバシーポリシー - 個人情報保護方針">
   <meta name="keywords" content="カイタックジャパン,プライバシーポリシー,個人情報保護,GDPR">
-  
+  <title>プライバシーポリシー | カイタックジャパン</title>
   
   <!-- ファビコン - 複数サイズ -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">

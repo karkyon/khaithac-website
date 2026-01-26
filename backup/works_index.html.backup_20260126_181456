@@ -3,31 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <title>お客様事例 | カイタックジャパン</title>
-    <meta name="description" content="カイタックジャパンの開発実績・導入事例をご紹介。製造業を中心に、短期間・高品質な開発で確実な効果を実現します。">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.khaithac-jp.com/works/index.html">
-    <meta property="og:title" content="お客様事例 | カイタックジャパン">
-    <meta property="og:description" content="カイタックジャパンの開発実績・導入事例をご紹介。製造業を中心に、短期間・高品質な開発で確実な効果を実現します。">
-    <meta property="og:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="カイタックジャパン">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.khaithac-jp.com/works/index.html">
-    <meta name="twitter:title" content="お客様事例 | カイタックジャパン">
-    <meta name="twitter:description" content="カイタックジャパンの開発実績・導入事例をご紹介。製造業を中心に、短期間・高品質な開発で確実な効果を実現します。">
-    <meta name="twitter:image" content="https://www.khaithac-jp.com/assets/images/ogp/ogp-main.png">
-
-  
+  <meta name="description" content="カイタックジャパンの開発実績 - 製造業、サービス業、建設業など多様な業界での開発事例をご紹介">
   <meta name="keywords" content="開発実績,事例,ポートフォリオ,システム開発,導入事例,カイタックジャパン">
-  
+  <title>開発実績 | カイタックジャパン</title>
   
   <!-- ファビコン - 複数サイズ -->
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
